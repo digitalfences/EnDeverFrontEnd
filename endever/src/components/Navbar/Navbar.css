@@ -22,6 +22,7 @@
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
+    align-content: center;
     /* border: 1px solid red; */
     height: 100%;
     font-size: 3em;
@@ -30,6 +31,16 @@
     font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
     user-select: none;
 }
+
+.Navbar__LogoFlexbox > img {
+    /* padding-bottom: 0.; */
+}
+
+/* .Navbar__LogoFlexbox > * {
+    border: 1px solid red;
+    align-content: center;
+    align-self: center;
+} */
 
 .ProductLogo {
     max-height: 1em;

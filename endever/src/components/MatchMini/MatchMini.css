@@ -1,0 +1,44 @@
+.MatchMini {
+    width: 100px;
+    height: 100px;
+    /* min-width: 120px;
+    min-height: 120px; */
+    background: #1f1f1f;
+    border-radius: 0.4em;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+.MatchMini__Grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* border: 1px solid red; */
+}
+
+.MatchMini__Grid__Name {
+    grid-column: 1;
+    grid-row: 4;
+    background: rgba(0,0,0,0.5);
+
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    text-align: center;
+    /* border-radius: 0 0 .02; */
+    border-radius: 0 0 0.4em 0.4em;
+    z-index: 100;
+}
+
+.MatchMini__Grid__Photo {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    border-radius: 0.3em;
+    z-index: 1;
+}
+
+.MatchMini__Grid__Photo > img {
+    border-radius: 0.3em;
+}
