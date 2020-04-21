@@ -8,12 +8,17 @@ import './fonts/fonts.css';
 //For testing
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
+import DevCard from './components/DevCard/DevCard';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <div className="FlexViews">
       <Sidebar />
+      <DevCard />
+
+      </div>
       {/* <header className="App-header"> */}
         
         {/* <Sidebar /> */}
