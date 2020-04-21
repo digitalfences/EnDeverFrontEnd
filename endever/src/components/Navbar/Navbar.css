@@ -23,10 +23,11 @@
     align-items: center;
     /* border: 1px solid red; */
     height: 100%;
-    font-size: 2em;
+    font-size: 3em;
     padding-right: 0.4em;
     color: white;
     font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
+    user-select: none;
 }
 
 .ProductLogo {

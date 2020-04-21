@@ -5,7 +5,6 @@ import GitHubLogo from './img/GitHub_Logo_White.png';
 import './App.css';
 import './fonts/fonts.css';
 
-
 function App() {
   return (
     <div className="App">
