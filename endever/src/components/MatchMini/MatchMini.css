@@ -7,6 +7,16 @@
     border-radius: 0.4em;
     border: 1px solid #ccc;
     color: white;
+    cursor: pointer;
+    animation: fadeInLeft 1.0s;
+}
+
+.MatchMini:hover {
+    border: 1px solid white;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    transition: 0.3s ease;
 }
 
 .MatchMini__Grid {
@@ -30,6 +40,7 @@
     /* border-radius: 0 0 .02; */
     border-radius: 0 0 0.4em 0.4em;
     z-index: 100;
+    animation: fadeInUp 1.0s;
 }
 
 .MatchMini__Grid__Photo {
@@ -41,4 +52,38 @@
 
 .MatchMini__Grid__Photo > img {
     border-radius: 0.3em;
+    animation: fadeIn 2.0s;
+}
+
+
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(+50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

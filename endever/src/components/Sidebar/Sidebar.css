@@ -5,6 +5,7 @@
     background: #171616;
     margin: 0;
     padding: 0;
+    
 }
 
 .Sidebar__Profile {
@@ -50,6 +51,7 @@
 
     /* border: 1px solid red; */
     /* justify-content: s; */
+    /* border-right: 1px solid #ccc; */
 }
 
 .Sidebar__Matches__Container__Mini {
