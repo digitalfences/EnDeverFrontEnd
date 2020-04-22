@@ -34,11 +34,13 @@
     color: white;
     font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
     user-select: none;
+    min-height: 2em;
     /* border: 1px solid red; */
     /* justify-content: center; */
     height: 30px;
     font-size: 1.1em;
-    padding-left: 1.1em;
+    padding-left: 1.2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     
 }
 

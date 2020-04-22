@@ -1,0 +1,122 @@
+.DevProfile {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    /* border: 1px solid green; */
+    animation-name: fadeIn;
+    animation-duration: 0.5s; 
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+}
+
+.DevProfile__Image {
+    min-width: 380px;
+    min-width: 380px;
+    max-height: 380px;
+    max-height: 380px;
+    box-sizing: content-box;
+    border-bottom: 2px solid #ccc;
+
+}
+
+.DevProfile__Image > img {
+    min-width: 380px;
+    min-width: 380px;
+    max-height: 380px;
+    max-height: 380px;
+    box-sizing: content-box;
+    border-bottom: 2px solid #ccc;
+
+}
+
+.DevProfile__UserInfo {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    height: 100px;
+    font-weight: 500;
+    box-sizing: content-box;
+    text-align: left;
+    padding: 0.5em;
+    display: flex;
+    flex-flow: row nowrap;   
+
+}
+.DevProfile__UserInfo__Left {
+    width: 50%;
+    /* border: 1px solid blue; */
+    /* box-sizing: content-box; */
+    /* padding-bottom: 0.2em; */
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.DevProfile__UserInfo__Name {
+    padding-left: 0.05em;
+}
+
+.DevProfile__UserInfo__Bio {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 0.7em;
+    padding-top: 0.2em;
+    padding-left: 0.2em;
+}
+
+.DevProfile__UserInfo__Work {
+    font-size: 0.8em;
+    padding-left: 0.2em;
+    /* border: 1px solid red; */
+}
+
+.DevProfile__UserInfo__Work > img {
+    max-height: 0.8em;
+    padding-right: 0.2em;
+}
+.DevProfile__UserInfo__Right {
+    width: 50%;
+    /* border: 1px solid green; */
+    box-sizing: content-box;
+}
+
+.DevProfile__UserInfo__GitHub {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-bottom: .5em;
+    /* font-family: ; */
+}
+.DevProfile__UserInfo__GitHub > img {
+    max-height: 1.2em;
+    padding-right: 0.1em;
+}
+
+.DevProfile__UserInfo__GitHub__Projects {
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    padding-left: 1em;
+    /* font-family: ; */
+}
+
+.DevProfile__UserInfo__GitHub__Projects > img {
+    max-height: 1.2em;
+}
+
+.DevProfile__Unmatch {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    /* border: 1px solid red; */
+    height: 100%;
+    padding-bottom: 2.1em;
+}
+
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

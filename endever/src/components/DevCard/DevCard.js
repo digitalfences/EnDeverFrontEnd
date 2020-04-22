@@ -17,23 +17,24 @@ class DevCard extends Component {
     constructor(){
         super();
         this.state = {
-            active: true
+            active: true,
+            hideButtons: false
         };
-
-
 
     }
 
     componentDidMount() {
 
         if(this.props.callback) this.props.callback();
-    
+        
+        if(this.props.hideButtons === 'true') this.setState({ hideButtons: true});
     }
 
     sampleCallback = (event) => {
         alert(event.target + " clicked me");
     }
     render() {
+        
         // let  lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.";
         let url = 'https://picsum.photos/380/380';
         
@@ -82,8 +83,11 @@ class DevCard extends Component {
 
                 <div className="DevCardButton__Container">
                     <div>
-                <DevCardButton orientation="left" icon={NoIcon} callback={this.sampleCallback} />
-                <DevCardButton orientation="right" icon={PullRequestIcon} callback={this.sampleCallback} />        
+   
+                       <DevCardButton orientation="left" icon={NoIcon} callback={this.sampleCallback} />
+                        <DevCardButton orientation="right" icon={PullRequestIcon} callback={this.sampleCallback} />        
+
+                 
                 </div>
                 </div>
             </div>

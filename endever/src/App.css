@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background: #0c0c0c;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -25,6 +26,7 @@
   font-size: 3em;
   color: white;
   font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
+
 }
 
 .landing {
@@ -34,6 +36,7 @@
   align-items: center;
   /* border: 1px solid red; */
   width: 100vw;
+  animation: fadeInDown 1.0s;
 }
 
 .ProductLogo {
@@ -68,7 +71,8 @@
   background: linear-gradient(to bottom,  #060707 1%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060707', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 
-
+  animation: fadeInUp 1.0s;
+  user-select: none;
 }
 
 .App-link {
@@ -87,5 +91,28 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(+100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }

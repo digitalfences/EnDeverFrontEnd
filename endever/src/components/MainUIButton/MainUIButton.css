@@ -1,0 +1,46 @@
+.MainUIButton {
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    width: 80%;
+    margin: 0 auto;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+.MainUIButton:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+    transition: 0.5s ease;
+}
+
+.MainUIButton:focus {
+    outline: none;
+}
+
+.MainUIButton__Content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainUIButton__Content > * {
+    /* padding: 0.2em; */
+}
+
+.MainUIButton__Content__Icon {
+    max-height: 2em;
+    padding: 0 0.4em;
+    /* border: 1px solid red; */
+}
+
+.MainUIButton__Content__Icon > img {
+    max-height: 2em;
+}
+
+.MainUIButton__Content__Label {
+    font-size: 2em;
+    /* border: 1px solid red; */
+    /* text-transform: uppercase; */
+}

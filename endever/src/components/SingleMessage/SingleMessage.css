@@ -1,0 +1,67 @@
+.SingleMessage {
+    /* display: flex;
+    flex-flow: row nowrap; */
+    /* border: 1px solid red; */
+    /* min-height: 50px; */
+    /* margin-top: 2em; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+}
+
+.Left {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 60%;
+    animation-name: fadeInTop;
+    animation-duration: 0.5s;
+    animation-delay: 1.0s;
+    animation-fill-mode: backwards;
+    text-align: left;
+    
+}
+
+.Left__TextContent {
+    margin-left: 0.4em;
+    color: black;
+    background: #ccc;
+    border-radius: 0.8em 0.8em 0.8em 0;
+    padding: 0.5em;
+    min-width: 2em;
+}
+
+.Right {
+    margin-left: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 60%;
+    justify-content: flex-end;
+    animation-name: fadeInTop;
+    animation-duration: 0.5s;
+    animation-delay: 1.0s;
+    animation-fill-mode: backwards;
+    /* text-align: justify; */
+    text-align: left;
+    /* border: 1px solid green; */
+}
+
+.Right__TextContent {
+    min-width: 2em;
+    margin-right: 0.4em;
+    color: white;
+    background: #0088ff;
+    border-radius: 0.8em 0.8em 0 0.8em;
+    padding: 0.5em;
+}
+
+@keyframes fadeInTop {
+    0%{
+        opacity: 0;
+        transform: translateY(+500%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
