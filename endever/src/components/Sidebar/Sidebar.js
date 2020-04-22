@@ -3,12 +3,13 @@ import '../../fonts/fonts.css';
 import './Sidebar.css';
 
 import MatchMini from '../MatchMini/MatchMini';
+import MessageMini from '../MessageMini/MessageMini';
 
 class Sidebar extends Component {
     constructor() {
         super()
         this.state = {
-
+            sidebarDisplay: 'matches'
         }
     }
     componentDidMount() {
@@ -23,6 +24,15 @@ class Sidebar extends Component {
 
     }
 
+    setMatchesView = () => {
+        this.setState( { sidebarDisplay: 'matches' } );
+
+    }
+
+    setMessagesView = () => {
+        this.setState( { sidebarDisplay: 'messages' } );
+    }
+
     render() {
        
         let url = 'https://picsum.photos/98/98';
@@ -34,20 +44,52 @@ class Sidebar extends Component {
                 </div>
 
                 <div className="Sidebar__Views">
-                    <div>Matches</div>
-                    <div>Messages</div>
+
+                { this.state.sidebarDisplay === 'matches' ?
+                    <>
+                        <div className="MatchesViewLink active" onClick={this.setMatchesView}>Matches</div>
+                        <div className="MessagesViewLink"onClick={this.setMessagesView}>Messages</div>
+                    </>
+                :
+                <>
+                    <div className="MatchesViewLink" onClick={this.setMatchesView}>Matches</div>
+                    <div className="MessagesViewLink active"onClick={this.setMessagesView}>Messages</div>
+                </>
+                }
+                
                 </div>
 
-                <div className="Sidebar__Matches__Container">
-                <div className="Sidebar__Matches__Container__Mini">
-                    <MatchMini name="Daniel" photoURL={url} /> 
-                    <MatchMini name="Galen" photoURL={url} /> 
-                    <MatchMini name="Shimin" photoURL={url} /> 
-                    <MatchMini name="Roger" photoURL={url} /> 
-                    <MatchMini name="Noah" photoURL={url} /> 
+
+            {this.state.sidebarDisplay === 'matches' ? 
+
+                    <div className="Sidebar__Matches__Container">
+                    <div className="Sidebar__Matches__Container__Mini">
+                        <MatchMini name="Daniel" photoURL={url} /> 
+                        <MatchMini name="Galen" photoURL={url} /> 
+                        <MatchMini name="Shimin" photoURL={url} /> 
+                        <MatchMini name="Roger" photoURL={url} /> 
+                        <MatchMini name="Noah" photoURL={url} /> 
+                        </div>
                     </div>
 
-                </div>
+            : 
+                
+                <div className="Sidebar__Message__Container">
+                    {/* <h1>Messages View</h1> */}
+                        <MessageMini name="Daniel" photoURL={url} /> 
+                        <MessageMini name="Galen" photoURL={url} /> 
+                        <MessageMini name="Shimin" photoURL={url} /> 
+                        <MessageMini name="Roger" photoURL={url} /> 
+                        <MessageMini name="Noah" photoURL={url} /> 
+
+
+
+                </div>    
+            
+            
+            }
+
+
             </div>
 
         );

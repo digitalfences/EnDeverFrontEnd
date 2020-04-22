@@ -31,6 +31,7 @@
     color: white;
     font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
     user-select: none;
+    animation: fadeInRight 0.7s;
 }
 
 .Navbar__LogoFlexbox > img {
@@ -47,3 +48,14 @@
     max-height: 1em;
     padding-right: 0.2em;
   }
+
+  @keyframes fadeInRight {
+    0% {
+        transform: translateX(+100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

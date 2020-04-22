@@ -44,7 +44,9 @@
 
 .Sidebar__Views > div {
     margin: 0 0.2em;
+    margin-top: 0.1em;
     padding-top: 0.4em;
+    padding-bottom: ;
 }
 
 .Sidebar__Matches__Container {
@@ -65,3 +67,49 @@
     margin: 0.4em 0.4em;
 }
 
+.Sidebar__Message__Container {
+
+    /* border: 1px solid red; */
+    /* justify-content: s; */
+    /* border-right: 1px solid #ccc; */
+    animation: fadeInUp 1.0s;
+    color: #f1f1f1;
+}
+
+.active {
+    background: rgb(212, 34, 87);
+    border-radius: 0.2em;
+    transition: 0.5s ease;
+    /* animation: fadeInLeft 0.5s; */
+    /* padding-bottom: 0.5em; */
+    /* animation: fadInLeft 1.0s; */
+    /* align-self: center; */
+    
+    
+}
+
+.MatchesViewLink, .MessagesViewLink {
+    padding: 0.0em 0.2em 1.4em 0.2em;
+    
+}
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

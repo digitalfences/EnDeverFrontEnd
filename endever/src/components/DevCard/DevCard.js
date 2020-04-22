@@ -67,7 +67,7 @@ class DevCard extends Component {
                         {name}
                     </div>
                     <div className="DevCard__UserInfo__Work"><img src={workicon} />{work}</div>
-                    <hr class="divider" />
+                    <hr className="divider" />
                     <div className="DevCard__UserInfo__Bio">{bio}</div>
                 </div>
                 <div className="DevCard__UserInfo__Right">
