@@ -24,10 +24,11 @@ class DevCard extends Component {
     }
 
     componentDidMount() {
-
-        if(this.props.callback) this.props.callback();
+        this.props.sessionCheck();
         
+        if(this.props.callback) this.props.callback();
         if(this.props.hideButtons === 'true') this.setState({ hideButtons: true});
+        
     }
 
     sampleCallback = (event) => {

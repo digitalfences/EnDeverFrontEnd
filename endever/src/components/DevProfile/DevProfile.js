@@ -23,13 +23,14 @@ class DevProfile extends Component {
 
     componentDidMount(){
         this.props.sessionCheck();
+        // console.log(this.props);
     }
 
 
 
     handleProfileUpdate = (event) => {
         event.preventDefault();
-        this.sessionCheck();
+        // this.sessionCheck();
 
         //pseudocode
         /*fetch , method: 'PATCH', credentials: 'include'

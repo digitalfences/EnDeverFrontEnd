@@ -12,7 +12,8 @@ class MatchedProfile extends Component {
     }
 
     componentDidMount() {
-        this.props.sessionCheck();
+        // this.props.sessionCheck();
+        // console.log(this.props);
         
         if(this.props.callback) this.props.callback();
     }
@@ -37,7 +38,7 @@ class MatchedProfile extends Component {
             <div className="MatchedProfile">
                 {/* <DevCard hideButtons="true" /> */}
 
-                <DevProfile />
+                <DevProfile sessionCheck={this.props.sessionCheck} />
                 
             </div>
         );

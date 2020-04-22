@@ -14,6 +14,8 @@ class Sidebar extends Component {
     }
     componentDidMount() {
         if(this.props.callback) this.props.callback();
+        // console.log(this.props);
+        this.props.sessionCheck();
     }
 
     populateUserMatches = () => {

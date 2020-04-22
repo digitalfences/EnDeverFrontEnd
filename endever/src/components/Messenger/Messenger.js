@@ -29,6 +29,8 @@ class Messenger extends Component {
     componentDidMount(){
         if(this.props.callback) this.props.callback();
         this.scrollToBottom();
+
+        this.props.sessionCheck();
     }
 
     scrollToBottom() {
@@ -84,7 +86,7 @@ class Messenger extends Component {
                 
             </div>
 
-            <MatchedProfile />
+            <MatchedProfile sessionCheck={this.props.sessionCheck} />
 
     
             </>

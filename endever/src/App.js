@@ -32,6 +32,8 @@ class  App extends Component {
 
 
   sessionCheck = () => {
+
+    console.log("checked");
     //pseudocode
     /* fetch GET credentials:include
     url api/sessioncheck
