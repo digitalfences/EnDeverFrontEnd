@@ -21,8 +21,24 @@ class DevProfile extends Component {
         }   
     }
 
+    componentDidMount(){
+        this.props.sessionCheck();
+    }
+
+
+
     handleProfileUpdate = (event) => {
         event.preventDefault();
+        this.sessionCheck();
+
+        //pseudocode
+        /*fetch , method: 'PATCH', credentials: 'include'
+        res res.json
+        .then
+            reload state to reflect changes
+            this.setState({});
+
+        */
     }
     
     render() {   
@@ -67,7 +83,7 @@ class DevProfile extends Component {
                        <DevProfileTextInput name="work" label="Work:" dbvalue="" />
                        <DevProfileTextInput name="bio" label="Bio:" dbvalue="" />
 
-                       <button className="DevProfile__Controls__Submit">Submit</button>
+                       <button className="DevProfile__Controls__Submit" onClick={this.handleProfileUpdate}>Submit</button>
 
                     </form>
 

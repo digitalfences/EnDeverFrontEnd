@@ -12,6 +12,8 @@ class MatchedProfile extends Component {
     }
 
     componentDidMount() {
+        this.props.sessionCheck();
+        
         if(this.props.callback) this.props.callback();
     }
 

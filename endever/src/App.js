@@ -30,6 +30,18 @@ class  App extends Component {
       // window.location = this.state.authURL;
   }
 
+
+  sessionCheck = () => {
+    //pseudocode
+    /* fetch GET credentials:include
+    url api/sessioncheck
+    checks for session key in express session/redis store
+    if yes, great ... do nothing
+    if not, window.location / 
+    */
+  }
+
+
   render() {
 
    
@@ -39,15 +51,15 @@ class  App extends Component {
           <div className="App">
             <Navbar />
             <div className="FlexViews">
-            <Sidebar />
+            <Sidebar sessionCheck={this.sessionCheck} />
 
             {this.state.primaryDisplay === 'cards' ?
              
-              <DevCard />
+              <DevCard sessionCheck={this.sessionCheck} />
              
             : 
             
-              <Messenger />
+              <Messenger sessionCheck={this.sessionCheck} />
             
             }
             
