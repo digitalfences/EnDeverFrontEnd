@@ -112,6 +112,20 @@
 
 
 
+.DevProfile__Controls__Form {
+    /* border-top: 1px solid #ccc; */
+    border-bottom: 1px solid #ccc;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.DevProfile__Controls__Title {
+    /* display: inline; */
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;

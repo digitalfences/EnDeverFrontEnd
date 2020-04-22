@@ -38,7 +38,7 @@ class Messenger extends Component {
     }
 
     render() {
-        const messagesEndRef = React.createRef();
+        
 
         if(this.props.conversationID &&  this.props.name && this.props.photoURL) {
             let cid = this.props.conversationID;
@@ -69,12 +69,10 @@ class Messenger extends Component {
                     <SingleMessage side="left" message="Heyyy" />
                     <SingleMessage side="left" message="This is a much longer message.This is a much longer message.This is a much longer message.This is a much longer message.This is a much longer message.This is a much longer message. This is a much longer message. This is a much longer message." />
                     <SingleMessage side="right" message="This is a much longer message.This is a much longer message.This is a much longer message.This is a much longer message.This is a much longer message.This is a much longer message. This is a much longer message. This is a much longer message." />
-
-
                     <SingleMessage side="left" message="Ayy" />
-                    <SingleMessage side="Right" message="ohhh" />
-                    {/* <div ref={messagesEndRef} /> */}
-                    {this.state.ref}
+                    <SingleMessage side="right" message="ohhh" />
+                    <SingleMessage side="Right" message="r u up?" />
+
                 </div>
                 <div className="Messenger__Controls">
 

@@ -6,6 +6,8 @@ import projecticon from '../../img/projecticon.png';
 import workicon from "../../img/workicon.png";
 import PullRequestIcon from '../../img/git-pull-request.png';
 import NoIcon from '../../img/X.png';
+
+import DevProfileTextInput from '../DevProfileTextInput/DevProfileTextInput';
 // import DevCardButton from '../DevCardButton/DevCardButton';
 
 import MainUIButton from '../MainUIButton/MainUIButton';
@@ -15,7 +17,7 @@ class DevProfile extends Component {
         super();
 
         this.state = {
-            mine: false
+            mine: true
         }   
     }
     
@@ -53,7 +55,25 @@ class DevProfile extends Component {
                 <MainUIButton label="Unmatch" icon={NoIcon}  /> 
                 </div>
             :
-                ''
+                <div className="DevProfile__Controls">
+                    <h3 className="DevProfile__Controls__Title">Edit Profile:</h3>
+                    <form method="PATCH" className="DevProfile__Controls__Form" >
+                        {/* <div>
+                       <label>Name:</label> <input type="text" placeholder="John Smith" className="DevProfile__Controls__TextInput" />
+                       </div>
+                       <div>
+                       <label>Work:</label> <input type="text" placeholder="EnDever, LLC" className="DevProfile__Controls__TextInput" />
+                       </div>
+                       <div>
+                       <label>Bio:</label> <input type="text" placeholder="I am very smart." className="DevProfile__Controls__TextInput" />
+                       </div> */}
+                       <DevProfileTextInput name="name" label="Name:" dbvalue="" />
+                       <DevProfileTextInput name="work" label="Work:" dbvalue="" />
+                       <DevProfileTextInput name="bio" label="Bio:" dbvalue="" />
+
+                    </form>
+
+                </div>
             }
             </div>
         );

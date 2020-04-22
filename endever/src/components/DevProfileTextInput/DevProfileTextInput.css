@@ -1,0 +1,41 @@
+.DevProfileTextInput {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-bottom: 0.2em;
+
+}
+
+.DevProfile__Controls__TextInput {
+    width: calc(100% - 4em);
+    /* height: 70%; */
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    /* padding-left: 1em; */
+    padding-right: 1em;
+    background: none;
+    font-size: 1em;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid #fefefe;
+    margin-left: 0.2em
+
+}
+.DevProfile__Controls__TextInput:focus {
+    outline: none;
+    /* border: 1px solid #ccc; */
+    padding-left: 1em;
+    /* background:  rgb(255, 252, 252); */
+    /* border-radius: 0.3em; */
+    transition: 0.1s ease;
+    /* box-sizing: content-box; */
+}
+
+
+.DevProfile__Controls__TextArea:focus {
+    outline: none;
+}
+
+.DevProfileTextInput__Label {
+    /* font-weight: bold; */
+    text-align: right;
+    min-width: 4em;
+}
