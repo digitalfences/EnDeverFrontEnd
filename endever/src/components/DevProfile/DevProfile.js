@@ -20,6 +20,10 @@ class DevProfile extends Component {
             mine: true
         }   
     }
+
+    handleProfileUpdate = (event) => {
+        event.preventDefault();
+    }
     
     render() {   
         let url = 'https://picsum.photos/380/380';
@@ -56,20 +60,14 @@ class DevProfile extends Component {
                 </div>
             :
                 <div className="DevProfile__Controls">
-                    <h3 className="DevProfile__Controls__Title">Edit Profile:</h3>
+                    <h3 className="DevProfile__Controls__Title">Edit Profile</h3>
                     <form method="PATCH" className="DevProfile__Controls__Form" >
-                        {/* <div>
-                       <label>Name:</label> <input type="text" placeholder="John Smith" className="DevProfile__Controls__TextInput" />
-                       </div>
-                       <div>
-                       <label>Work:</label> <input type="text" placeholder="EnDever, LLC" className="DevProfile__Controls__TextInput" />
-                       </div>
-                       <div>
-                       <label>Bio:</label> <input type="text" placeholder="I am very smart." className="DevProfile__Controls__TextInput" />
-                       </div> */}
-                       <DevProfileTextInput name="name" label="Name:" dbvalue="" />
+     
+                       <DevProfileTextInput name="name" label="Name:" dbvalue="Daniel" />
                        <DevProfileTextInput name="work" label="Work:" dbvalue="" />
                        <DevProfileTextInput name="bio" label="Bio:" dbvalue="" />
+
+                       <button className="DevProfile__Controls__Submit">Submit</button>
 
                     </form>
 

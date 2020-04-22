@@ -1,6 +1,7 @@
 .DevProfileTextInput {
     display: flex;
     flex-flow: row nowrap;
+    padding-top: 0.2em;
     padding-bottom: 0.2em;
 
 }
@@ -15,7 +16,7 @@
     font-size: 1em;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    border-top: 1px solid #fefefe;
+    /* border-top: 1px solid #fefefe; */
     margin-left: 0.2em
 
 }
