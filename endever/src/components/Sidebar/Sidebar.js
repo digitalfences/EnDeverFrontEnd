@@ -82,11 +82,11 @@ class Sidebar extends Component {
                 
                 <div className="Sidebar__Message__Container">
                     {/* <h1>Messages View</h1> */}
-                        <MessageMini name="Daniel" photoURL={url} setMainViewState={this.setCardView} /> 
-                        <MessageMini name="Galen" photoURL={url} setMainViewState={this.setCardView}/> 
-                        <MessageMini name="Shimin" photoURL={url} setMainViewState={this.setCardView} /> 
-                        <MessageMini name="Roger" photoURL={url} setMainViewState={this.setCardView}/> 
-                        <MessageMini name="Noah" photoURL={url}  setMainViewState={this.setCardView}/> 
+                        <MessageMini name="Daniel" photoURL={url} setMainViewState={this.props.setMainViewState} /> 
+                        <MessageMini name="Galen" photoURL={url} setMainViewState={this.props.setMainViewState}/> 
+                        <MessageMini name="Shimin" photoURL={url} setMainViewState={this.props.setMainViewState} /> 
+                        <MessageMini name="Roger" photoURL={url} setMainViewState={this.props.setMainViewState}/> 
+                        <MessageMini name="Noah" photoURL={url}  setMainViewState={this.props.setMainViewState}/> 
 
 
 
