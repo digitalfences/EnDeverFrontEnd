@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+.MessageMini {
+    display: flex;
+    flex-flow: row nowrap;
+    /* border: 1px solid blue; */
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    align-content: center;
+    padding: 0.3em 0;
+}
+
+.MessageMini__Image {
+    /* border-radius: 25%; */
+    max-width: 98px;
+    /* border: 1px solid green; */
+    /* padding: 0.3em 0.5em; */
+    padding: 0em 0.5em 0em 1.4em;
+    /* border: 1px solid white; */
+    /* align-self: center;
+    align-content: center; */
+    
+}
+.MessageMini__Image > img {
+    border-radius: 50%;
+    max-width: 75px;
+}
+
+.MessageMini__LastMessage {
+    color: #f1f1f1;
+}
+
+
+.MessageMini:hover {
+    border-right: 3px solid aqua;
+    background: rgba(0,0,0,0.2);
+    transition: 0.1s ease;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    border-bottom: none;
+    /* margin-bottom: 3px; */
+}
+.MessageMini:hover > div > img {
+    /* transform: translateX(+3px); */
+    transition: 0.1s ease;
+
+}
+
+.MessageMini__ProfileName {
+    font-weight: bold;
+    /* text-decoration: underline !important; */
+}
+
+.MessageMini__FlexRight {
+    text-align: left;
+    /* border: 1px solid green; */
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    /* padding: auto auto; */
+}

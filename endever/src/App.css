@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: #0c0c0c;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -17,22 +19,100 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 3em;
   color: white;
+  font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
+
+}
+
+.landing {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 100vw;
+  animation: fadeInDown 1.0s;
+}
+
+.ProductLogo {
+  max-height: 1em;
+  padding-right: 0.2em;
+}
+
+.GitHubLogo {
+  max-height: 1.25em;
+  /* border: 1px solid red; */
+  /* padding-left: 0.2em; */
+  /* padding-bottom: 0.1em; */
+  /* margin-bottom: 0.1em; */
+}
+
+.GitHubIntegration {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  font-size: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  /* background: #1f1f1f; */
+  border: 1px solid rgb(10, 9, 9);
+  cursor: pointer;
+  font-family: 'collegiateregular', Arial, Helvetica, sans-serif;
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#060707+1,000000+100 */
+  background: #060707; /* Old browsers */
+  background: -moz-linear-gradient(top,  #060707 1%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #060707 1%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #060707 1%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060707', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+  animation: fadeInUp 1.0s;
+  user-select: none;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+
+.FlexViews {
+  display: flex;
+  flex-flow: row nowrap;
+  /* border: 1px solid red; */
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(+100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }

@@ -1,0 +1,119 @@
+.Sidebar {
+    height: 100vh;
+    width: 375px;
+    /* background: red; */
+    background: #171616;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.Sidebar__Profile {
+    height: 75px;
+    background: #383838; /* Old browsers */
+    background: -moz-linear-gradient(top,  #383838 0%, #2d2d2d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #383838 0%,#2d2d2d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #383838 0%,#2d2d2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#2d2d2d',GradientType=0 ); /* IE6-9 */
+
+    color: white;
+    font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
+    user-select: none;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.Sidebar__Views {
+    display: flex;
+    flex-flow: row nowrap;
+    color: white;
+    font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
+    user-select: none;
+    min-height: 2em;
+    /* border: 1px solid red; */
+    /* justify-content: center; */
+    height: 30px;
+    font-size: 1.1em;
+    padding-left: 1.2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    
+}
+
+.Sidebar__Views > div {
+    margin: 0 0.2em;
+    margin-top: 0.1em;
+    padding-top: 0.4em;
+    padding-bottom: ;
+}
+
+.Sidebar__Matches__Container {
+
+    /* border: 1px solid red; */
+    /* justify-content: s; */
+    /* border-right: 1px solid #ccc; */
+}
+
+.Sidebar__Matches__Container__Mini {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 0.3em;
+    
+    justify-content: center;
+}
+.Sidebar__Matches__Container__Mini > div {
+    margin: 0.4em 0.4em;
+}
+
+.Sidebar__Message__Container {
+
+    /* border: 1px solid red; */
+    /* justify-content: s; */
+    /* border-right: 1px solid #ccc; */
+    animation: fadeInUp 1.0s;
+    color: #f1f1f1;
+    margin-top: 0.2em;
+}
+
+.active {
+    background: rgb(212, 34, 87);
+    border-radius: 0.2em;
+    transition: 0.5s ease;
+    /* animation: fadeInLeft 0.5s; */
+    /* padding-bottom: 0.5em; */
+    /* animation: fadInLeft 1.0s; */
+    /* align-self: center; */
+    
+    
+}
+
+.MatchesViewLink, .MessagesViewLink {
+    padding: 0.0em 0.2em 1.4em 0.2em;
+    cursor: pointer;
+    
+}
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

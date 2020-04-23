@@ -1,0 +1,124 @@
+.Messenger {
+    margin-top: 75px;
+    height: calc(100vh - 75px);
+    width: calc(100vw - 375px - 380px);
+    /* border: 1px solid red; */
+    /* background: rgba(255,255,255,0.01); */
+    animation: fadeInRight 1.0s;
+    border-left: 1px solid rgba(0,0,0,0.9);
+    border-right: 1px solid rgba(0,0,0,0.9);
+    z-index: 100;
+   
+
+}
+.Messenger__Messages {
+    background-color: #f1f1f1;
+    background-image: linear-gradient(0deg, #f1f1f1 0%, #d7e1ec 150%);
+    height: calc(100% - 75px);
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    /* border: 1px solid blue; */
+    /* color: black; */
+}
+
+.Messenger__Controls {
+    /* background: #1f1f1f; */
+    /* background-color: #000000;
+    background-image: linear-gradient(0deg, #000000 0%, #414141 300%);
+    */
+
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+
+
+    border-top: 1px solid rgba(0,0,0,0.2);
+    height: 75px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    /* justify-content: center; */
+}
+.Messenger__Controls__TextInput {
+    width: calc(100% - 10em);
+    height: 70%;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: none;
+    /* color: #f1f1f1; */
+    /* background: #0c0c0c; */
+    font-size: 1em;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid #fefefe;
+    margin-left: 0.2em
+    /* box-sizing: content-box; */
+    /* border: 1px solid red; */
+    /* caret-color: #f1f1f1; */
+}
+.Messenger__Controls__TextInput::placeholder {
+    /* color: #fffbfb */
+}
+.Messenger__Controls__TextInput:focus {
+    outline: none;
+    border: 1px solid #ccc;
+    background:  rgb(235, 234, 234);
+    border-radius: 3em;
+    transition: 0.1s ease;
+    /* box-sizing: content-box; */
+}
+
+
+.Messenger__Controls__Submit {
+    background-image: linear-gradient(0deg, #0088ff 0%, #3ca4ff 100%);
+    width: 10em;
+    height: 70%;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-size: 0.9em;
+    border-radius: 2em;
+    cursor: pointer;
+    margin-right: 0.5em;
+    margin-left: 0.2em;
+    /* font-weight: bold; */
+}
+.Messenger__Controls__Submit:focus {
+    outline: none;
+}
+.Messenger__Controls__Submit:hover {
+    background-image: linear-gradient(0deg #3ca4ff 0%,  #0088ff 100%);
+
+}
+
+.test { color : white;}
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(+100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

@@ -14,3 +14,14 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
+
+@font-face {
+  font-family: 'collegiateregular';
+  src: url('collegia-webfont.woff2') format('woff2'),
+       url('collegia-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}

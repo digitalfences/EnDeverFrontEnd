@@ -1,0 +1,32 @@
+.MatchedProfile {
+    width: 380px;
+    max-width: 380px;
+    margin-top: 75px;
+    height: calc(100vh - 75px);
+    /* border: 1px solid red; */
+
+    animation-name: fadeInProfile;
+    animation-duration: 1.0s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+    /* opacity: 0; */
+    z-index: 50;
+    
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+}
+
+@keyframes fadeInProfile {
+    0% {
+        opacity: 0;
+        /* transform: translateY(380px); */
+        transform: translateX(-100%);
+    }
+    /* 70% {
+        opacity: 0;
+        transform: translateX(+100%);
+    } */
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
