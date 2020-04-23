@@ -13,11 +13,12 @@ class MessageMini extends Component {
         if(this.props.loadCallback) this.props.loadCallback();
 
         console.log("messagemini props", this.props);
+
     }
 
-    initMessageView() {
-        if(this.props.setMainViewState) this.props.setMainViewState();
-    }
+    // initMessageView() {
+    //     if(this.props.setMainViewState) this.props.setMainViewState();
+    // }
     render() {
         let photoURL = 'https://picsum.photos/98/98';
         let lastMessage = "There isn't a message here yet.";
@@ -29,7 +30,7 @@ class MessageMini extends Component {
 
         return (
             // onClick={this.props.clickCallback ? this.props.clickCallback: "" }
-            <div className="MessageMini" onClick={this.initMessageView} >
+            <div className="MessageMini" onClick={this.props.setMainViewState} >
                 <div className="MessageMini__Image"><img src={photoURL} alt="Profile image." /></div>
                 <div className="MessageMini__FlexRight">
                 <div className="MessageMini__ProfileName">{he.decode(name)}</div>

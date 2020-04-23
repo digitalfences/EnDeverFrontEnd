@@ -78,7 +78,7 @@ class  App extends Component {
           <div className="App">
             <Navbar />
             <div className="FlexViews">
-            <Sidebar sessionCheck={this.sessionCheck} setMainViewState={this.setState} />
+            <Sidebar sessionCheck={this.sessionCheck} setMainViewState={this.setMainViewState} />
 
             {this.state.primaryDisplay === 'cards' ?
              
