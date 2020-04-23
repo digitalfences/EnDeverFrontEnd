@@ -35,6 +35,10 @@ class Sidebar extends Component {
         this.setState( { sidebarDisplay: 'messages' } );
     }
 
+    setCardView = () => {
+        this.props.setMainViewState();
+    }
+
     render() {
        
         let url = 'https://picsum.photos/98/98';
@@ -78,11 +82,11 @@ class Sidebar extends Component {
                 
                 <div className="Sidebar__Message__Container">
                     {/* <h1>Messages View</h1> */}
-                        <MessageMini name="Daniel" photoURL={url} /> 
-                        <MessageMini name="Galen" photoURL={url} /> 
-                        <MessageMini name="Shimin" photoURL={url} /> 
-                        <MessageMini name="Roger" photoURL={url} /> 
-                        <MessageMini name="Noah" photoURL={url} /> 
+                        <MessageMini name="Daniel" photoURL={url} setMainViewState={this.setCardView} /> 
+                        <MessageMini name="Galen" photoURL={url} setMainViewState={this.setCardView}/> 
+                        <MessageMini name="Shimin" photoURL={url} setMainViewState={this.setCardView} /> 
+                        <MessageMini name="Roger" photoURL={url} setMainViewState={this.setCardView}/> 
+                        <MessageMini name="Noah" photoURL={url}  setMainViewState={this.setCardView}/> 
 
 
 

@@ -14,11 +14,16 @@ class MatchMini extends Component {
     componentDidMount(){
         if(this.props.loadCallback) this.props.loadCallback();
     }
+
+    noCallback = () => {
+
+    }
+
     render() {
 
         return (
             <div className="MatchMini">
-                <div className="MatchMini__Grid" onClick={ (this.props.clickCallback) ? this.props.clickCallback : "" }>
+                <div className="MatchMini__Grid" onClick={ (this.props.clickCallback) ? this.props.clickCallback : this.noCallback }>
                     <div className="MatchMini__Grid__Name">{this.props.name}</div>
                     <div className="MatchMini__Grid__Photo"><img src={this.props.photoURL} /></div>
                 </div>

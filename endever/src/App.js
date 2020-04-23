@@ -57,12 +57,12 @@ class  App extends Component {
     if yes, great ... do nothing
     if not, window.location / 
     */
-    let URL = "http://localhost:4000/sessioncheck";
+    // let URL = "http://localhost:4000/sessioncheck";
 
-    axios.get(URL)
-    .then(res => {
-      console.log(res);
-    })
+    // axios.get(URL)
+    // .then(res => {
+    //   console.log(res);
+    // })
     
     
 
@@ -78,7 +78,7 @@ class  App extends Component {
           <div className="App">
             <Navbar />
             <div className="FlexViews">
-            <Sidebar sessionCheck={this.sessionCheck} />
+            <Sidebar sessionCheck={this.sessionCheck} setMainViewState={this.setState} />
 
             {this.state.primaryDisplay === 'cards' ?
              
