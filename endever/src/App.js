@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios';
 import logo from './logo.svg';
 import endevercircle from './img/endevercircle.png';
@@ -12,17 +13,18 @@ import Sidebar from './components/Sidebar/Sidebar';
 import DevCard from './components/DevCard/DevCard';
 import Messenger from './components/Messenger/Messenger';
 
-class  App extends Component {
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
 
     //temporary...
     //  let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=http://localhost:4000/oauth/callback";
     let authURL = 'http://localhost:4000/auth/github';
     this.state = {
-        auth: false,
-        primaryDisplay: 'messenger',
-        authURL: authURL
+      auth: false,
+      primaryDisplay: 'messenger',
+      authURL: authURL,
+      messengerHistory: '',
     }
   }
 
@@ -31,20 +33,40 @@ class  App extends Component {
   }
 
   testStateChange = () => {
-    this.setState( { auth: true } );
-      // window.location = this.state.authURL;
+    this.setState({ auth: true });
+    // window.location = this.state.authURL;
   }
 
-  setMainViewState = () => {
-      if(this.state.primaryDisplay === 'cards')
-        this.setState({ 
-            primaryDisplay: 'messenger'
+  setMainViewState = (force = "") => {
+
+    if (force !== "") {
+      this.setState({
+        primaryDisplay: force
+      })
+    }
+    else {
+      if (this.state.primaryDisplay === 'cards')
+        this.setState({
+          primaryDisplay: 'messenger'
         })
+
       else {
-        this.setState( {
-            primaryDisplay: 'cards'
+        this.setState({
+          primaryDisplay: 'cards'
         })
       }
+    }
+  }
+
+  setMessengerID = (id) => {
+
+    axios.get(`https://tigerkingbackend.herokuapp.com/message/${id}`, {
+      withCredentials: true
+    }).then(res => {
+      this.setState({
+        messengerHistory: res
+      })
+    })
   }
 
   sessionCheck = () => {
@@ -63,45 +85,77 @@ class  App extends Component {
     // .then(res => {
     //   console.log(res);
     // })
-    
-    
+
+
 
   }
 
 
   render() {
 
-   
+    return (<Router>
+      <div className="App">
+        <header>
+          <Navbar></Navbar>
+        </header>
+        <nav>
 
-    if(this.state.auth === true) {
+        </nav>
+        <main className="FlexViews">
+          <Switch>
+            <Route path="/messages" render={(routerProps) => {
+              <Sidebar sessionCheck={this.sessionCheck}{...routerProps} {...this.state} messages></Sidebar>
+            }} />
+
+            <Route path="/matches" render={(routerProps) => {
+              <Sidebar sessionCheck={this.sessionCheck}{...routerProps} {...this.state} matches></Sidebar>
+            }} />
+
+            <Route path="/messages/:id" render={(routerProps) => {
+              () => { this.setMainViewState() };
+              () => { this.setMessengerID() };
+              return (<Sidebar sessionCheck={this.sessionCheck} {...routerProps} {...this.state} matches></Sidebar>)
+            }} />
+            <Route path="/" render={(routerProps) => {
+              () => { this.setMainViewState("cards") };
+              return (<Sidebar sessionCheck={this.sessionCheck} {...routerProps} {...this.state} matches></Sidebar>)
+            }} />
+
+          </Switch>
+        </main>
+      </div>
+    </Router>)
+
+
+    if (this.state.auth === true) {
       return (
-          <div className="App">
-            <Navbar />
-            <div className="FlexViews">
+        <div className="App">
+          <Navbar />
+          <div className="FlexViews">
             <Sidebar sessionCheck={this.sessionCheck} setMainViewState={this.setMainViewState} />
 
             {this.state.primaryDisplay === 'cards' ?
-             
+
               <DevCard sessionCheck={this.sessionCheck} />
-             
-            : 
-            
+
+              :
+
               <Messenger sessionCheck={this.sessionCheck} setMainViewState={this.setMainViewState} />
-            
+
             }
-            
-             </div>
+
           </div>
+        </div>
       );
     }
     else {
       return (
-          <header className="App-header">
+        <header className="App-header">
           <div className="landing">
-          <img src={endevercircle} className="ProductLogo" /><div>EnDever App</div>
+            <img src={endevercircle} className="ProductLogo" /><div>EnDever App</div>
           </div>
           <div className="GitHubIntegration" onClick={this.testStateChange}>Sign in with <img src={GitHubLogo} className="GitHubLogo" /></div>
-          </header>
+        </header>
       );
     }
   }
