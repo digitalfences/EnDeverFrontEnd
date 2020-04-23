@@ -17,8 +17,8 @@ class  App extends Component {
     super();
 
     //temporary...
-    //  let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=http://localhost:4000/oauth/callback";
-    let authURL = 'http://localhost:4000/auth/github';
+     let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/oauth/callback";
+    // let authURL = 'http://localhost:4000/auth/github';
     this.state = {
         auth: false,
         primaryDisplay: 'messenger',
