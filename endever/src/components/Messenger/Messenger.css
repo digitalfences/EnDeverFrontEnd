@@ -1,3 +1,5 @@
+/*Messenger.css*/
+
 .Messenger {
     margin-top: 75px;
     height: calc(100vh - 75px);
@@ -14,7 +16,7 @@
 .Messenger__Messages {
     background-color: #f1f1f1;
     background-image: linear-gradient(0deg, #f1f1f1 0%, #d7e1ec 150%);
-    height: calc(100% - 75px);
+    height: calc(100% - 125px);
     /* overflow: hidden; */
     overflow-y: scroll;
     /* border: 1px solid blue; */
@@ -44,16 +46,12 @@
     padding-left: 2em;
     padding-right: 2em;
     background: none;
-    /* color: #f1f1f1; */
-    /* background: #0c0c0c; */
     font-size: 1em;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     border-top: 1px solid #fefefe;
     margin-left: 0.2em
-    /* box-sizing: content-box; */
-    /* border: 1px solid red; */
-    /* caret-color: #f1f1f1; */
+
 }
 .Messenger__Controls__TextInput::placeholder {
     /* color: #fffbfb */
@@ -92,6 +90,59 @@
 }
 
 .test { color : white;}
+
+
+
+.Messenger__Exit {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    /* width: 100%; */
+    min-height: 50px;
+    /* border: 1px solid red; */
+    background: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    padding-left: 2em;
+    /* box-sizing: content-box; */
+}
+
+.Messenger__Exit__Button {
+    /* border: 1px solid green; */
+    margin-right: 10px;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid #ccc;
+    border-radius: 2em;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    /* min-width: 25px; */
+    /* color: white */
+    /* background: #ccc; */
+
+}
+.Messenger__Exit__Button:hover {
+    /* border: 1px solid green; */
+    /* margin-right: 10px;
+    padding-left: 1em;
+    padding-right: 1em; */
+    border: 1px solid #0576da;
+    border-radius: 2em;
+    /* height: 30px; */
+    /* align-self: center; */
+    /* min-width: 25px; */
+    color: white;
+    background: #0088ff;
+    transition: 0.2s ease;
+
+
+}
+.Messenger__Exit__Button:focus {
+    outline: none;
+}
+
+
+
 @keyframes fadeInRight {
     0% {
         transform: translateX(+100%);

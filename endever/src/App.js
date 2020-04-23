@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import endevercircle from './img/endevercircle.png';
 import GitHubLogo from './img/GitHub_Logo_White.png';
@@ -16,8 +17,8 @@ class  App extends Component {
     super();
 
     //temporary...
-     let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=http://localhost:4000/oauth/callback";
-
+    //  let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=http://localhost:4000/oauth/callback";
+    let authURL = 'http://localhost:4000/auth/github';
     this.state = {
         auth: false,
         primaryDisplay: 'messenger',
@@ -25,11 +26,26 @@ class  App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.sessionCheck();
+  }
+
   testStateChange = () => {
     this.setState( { auth: true } );
       // window.location = this.state.authURL;
   }
 
+  setMainViewState = () => {
+      if(this.state.primaryDisplay === 'cards')
+        this.setState({ 
+            primaryDisplay: 'messenger'
+        })
+      else {
+        this.setState( {
+            primaryDisplay: 'cards'
+        })
+      }
+  }
 
   sessionCheck = () => {
 
@@ -41,6 +57,15 @@ class  App extends Component {
     if yes, great ... do nothing
     if not, window.location / 
     */
+    let URL = "http://localhost:4000/sessioncheck";
+
+    axios.get(URL)
+    .then(res => {
+      console.log(res);
+    })
+    
+    
+
   }
 
 
@@ -61,7 +86,7 @@ class  App extends Component {
              
             : 
             
-              <Messenger sessionCheck={this.sessionCheck} />
+              <Messenger sessionCheck={this.sessionCheck} setMainViewState={this.setMainViewState} />
             
             }
             

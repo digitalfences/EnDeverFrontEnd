@@ -39,6 +39,11 @@ class Messenger extends Component {
         });
     }
 
+    exitMessageView = () => {
+        // this.setState( { } ) //
+        this.props.setMainViewState();
+    }
+
     render() {
         
 
@@ -51,6 +56,10 @@ class Messenger extends Component {
         return (
             <>
             <div className="Messenger">
+                <div className="Messenger__Exit">
+                    <button className="Messenger__Exit__Button" onClick={this.exitMessageView}>Exit</button>
+
+                </div>
                 <div className="Messenger__Messages" id="msgid">
                     <SingleMessage side="left" message="Heyyy" />
                     <SingleMessage side="Right" message="Yo" />
