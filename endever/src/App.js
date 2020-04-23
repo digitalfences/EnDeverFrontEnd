@@ -17,7 +17,8 @@ class  App extends Component {
     super();
 
     //temporary...
-     let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/oauth/callback";
+    let client_id = '';
+     let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com:4000/auth/github/callback";
     // let authURL = 'http://localhost:4000/auth/github';
     this.state = {
         auth: false,
@@ -31,8 +32,8 @@ class  App extends Component {
   }
 
   testStateChange = () => {
-    this.setState( { auth: true } );
-      // window.location = this.state.authURL;
+    // this.setState( { auth: true } );
+      window.location = this.state.authURL;
   }
 
   setMainViewState = () => {
