@@ -5,12 +5,14 @@ import './Sidebar.css';
 
 import MatchMini from '../MatchMini/MatchMini';
 import MessageMini from '../MessageMini/MessageMini';
+import DevProfile from '../DevProfile/DevProfile';
 
 class Sidebar extends Component {
     constructor() {
         super()
         this.state = {
-            sidebarDisplay: 'matches'
+            sidebarDisplay: 'matches',
+            sidebarEdit: false
         }
     }
     componentDidMount() {
@@ -39,13 +41,23 @@ class Sidebar extends Component {
     setCardView = () => {
         this.props.setMainViewState("cards");
     }
+    
+    toggleSidebarProfileEdit = () => {
+        this.setState({ sidebarEdit: !this.state.sidebarEdit }, this.logState);
+
+    }
+
+    logState = () => console.log(this.state);
 
     render() {
        
         let url = 'https://picsum.photos/98/98';
+
+     
+
         return (
             <div className="Sidebar">
-                <div className="Sidebar__Profile">
+                <div className="Sidebar__Profile" onClick={this.toggleSidebarProfileEdit}>
                     <div>O</div>
                     <div>My Profile</div>
                 </div>
@@ -93,8 +105,15 @@ class Sidebar extends Component {
 
                 </div>    
             
-            
             }
+
+            {this.state.sidebarEdit === 'true' ? 
+            <div className="Zindex">
+                <DevProfile />
+
+            </div>
+            
+             : ''}
 
 
             </div>

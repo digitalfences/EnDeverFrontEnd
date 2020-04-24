@@ -117,6 +117,10 @@
     color: inherit;
 }
 
+.Zindex {
+    z-index: 0;
+}
+
 @keyframes fadeInUp {
     0% {
         transform: translateY(-100%);
