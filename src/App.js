@@ -19,7 +19,7 @@ class App extends Component {
     super();
     //temporary...
     //let authURL = "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
-    let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/oauth/callback";
+    let authURL = "https://github.com/login/auth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/oauth/callback";
     // let authURL = 'http://localhost:4000/auth/github';
     this.state = {
       auth: false,

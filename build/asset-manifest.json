@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6a22962b.chunk.css",
+    "main.js": "/static/js/main.548ee661.chunk.js",
+    "main.js.map": "/static/js/main.548ee661.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0daaead9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0daaead9.js.map",
+    "static/js/2.2453a33b.chunk.js": "/static/js/2.2453a33b.chunk.js",
+    "static/js/2.2453a33b.chunk.js.map": "/static/js/2.2453a33b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.aaa4d9ce955b5bb859fe29e3291bd55b.js": "/precache-manifest.aaa4d9ce955b5bb859fe29e3291bd55b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.6a22962b.chunk.css.map": "/static/css/main.6a22962b.chunk.css.map",
+    "static/js/2.2453a33b.chunk.js.LICENSE.txt": "/static/js/2.2453a33b.chunk.js.LICENSE.txt",
+    "static/media/GitHub_Logo_White.png": "/static/media/GitHub_Logo_White.064ace47.png",
+    "static/media/fonts.css": "/static/media/collegia-webfont.c1ef4261.woff2",
+    "static/media/endevercircle.png": "/static/media/endevercircle.0f765f07.png",
+    "static/media/git-pull-request.png": "/static/media/git-pull-request.0c8558fe.png",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/projecticon.png": "/static/media/projecticon.cd0851a8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0daaead9.js",
+    "static/js/2.2453a33b.chunk.js",
+    "static/css/main.6a22962b.chunk.css",
+    "static/js/main.548ee661.chunk.js"
+  ]
+}
