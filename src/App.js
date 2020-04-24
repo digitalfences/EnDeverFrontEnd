@@ -24,8 +24,8 @@ class App extends Component {
   constructor() {
     super();
     //temporary...
-    //let authURL = "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
-    let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/auth/github/callback"
+    let authURL = "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
+    // let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/auth/github/callback"
       //"https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
     // let authURL = 'http://localhost:4000/auth/github';
     this.state = {
@@ -60,7 +60,7 @@ class App extends Component {
     console.log("the state ");
     console.log(this.state);
     if (this.state.auth === true) {
-      if (force !== "") {
+      if (force !== null) {
         this.setState({
           primaryDisplay: force,
         });
@@ -96,8 +96,8 @@ class App extends Component {
   };
   sessionCheck = () => {
     // console.log(document.cookie);
-    axios
-      .get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
+    axios.get("http://localhost:4000/sessioncheck", {
+      // .get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
@@ -180,6 +180,7 @@ class App extends Component {
                         {...routerProps}
                         {...this.state}
                         messages
+                        setMainViewState={this.setMainViewState}
                       ></Sidebar>
                     );
                   }}
@@ -193,6 +194,7 @@ class App extends Component {
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
                         {...this.state}
+                        setMainViewState={this.setMainViewState}
                         matches
                       ></Sidebar>
                     );
@@ -227,6 +229,7 @@ class App extends Component {
                             {...routerProps}
                             {...this.state}
                             matches
+                            setMainViewState={this.setMainViewState}
                         >
                         </Sidebar>
                       <DevCard

@@ -1,4 +1,5 @@
 import React, { Component  } from 'react';
+import {Link, Route} from 'react-router-dom';
 import '../../fonts/fonts.css';
 import './Sidebar.css';
 
@@ -36,7 +37,7 @@ class Sidebar extends Component {
     }
 
     setCardView = () => {
-        this.props.setMainViewState();
+        this.props.setMainViewState("cards");
     }
 
     render() {
@@ -53,13 +54,13 @@ class Sidebar extends Component {
 
                 { this.state.sidebarDisplay === 'matches' ?
                     <>
-                        <div className="MatchesViewLink active" onClick={this.setMatchesView}>Matches</div>
-                        <div className="MessagesViewLink"onClick={this.setMessagesView}>Messages</div>
+                        <div className="MatchesViewLink active" ><Link to="/" onClick={this.setMatchesView}>Matches</Link></div>
+                        <div className="MessagesViewLink"><Link to="/messages" onClick={this.setMessagesView}>Messages</Link></div>
                     </>
                 :
                 <>
-                    <div className="MatchesViewLink" onClick={this.setMatchesView}>Matches</div>
-                    <div className="MessagesViewLink active"onClick={this.setMessagesView}>Messages</div>
+                    <div className="MatchesViewLink" ><Link to="/" onClick={this.setMatchesView}>Matches</Link></div>
+                    <div className="MessagesViewLink active"><Link to="/messages" onClick={this.setMessagesView}>Messages</Link></div>
                 </>
                 }
                 

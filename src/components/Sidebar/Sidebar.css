@@ -107,6 +107,16 @@
     }
 }
 
+.MatchesViewLink > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.MessagesViewLink > a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @keyframes fadeInUp {
     0% {
         transform: translateY(-100%);
