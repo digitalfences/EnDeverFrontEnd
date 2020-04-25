@@ -68,7 +68,8 @@ class App extends Component {
     }).then( res => {
       this.setState( { 
           profiles: res
-      })
+      },this.logState)
+      console.log("axios user fetch:", res);
     })
   }
 
@@ -107,6 +108,7 @@ class App extends Component {
         });
       });
   };
+  
   logState = () => {
     console.log(this.state);
   };
@@ -142,35 +144,8 @@ class App extends Component {
             console.log("res.data._id is null");
           }
         }
-        // if ("Account" in res.data) {
-        //   this.setState(
-        //     {
-        //       auth: true,
-        //       _id: res.data._id,
-        //       Username: res.data.UserName,
-        //       Account: res.data.Account,
-        //       Login: res.data.Login,
-        //     },
-        //     this.logState
-        //   );
-        // } else {
-        // }
+
       });
-
-    //console.log("checked");
-    //pseudocode
-    /* fetch GET credentials:include
-    url api/sessioncheck
-    checks for session key in express session/redis store
-    if yes, great ... do nothing
-    if not, window.location / 
-    */
-    // let URL = "http://localhost:4000/sessioncheck";
-
-    // axios.get(URL)
-    // .then(res => {
-    //   console.log(res);
-    // })
   };
 
   render() {
