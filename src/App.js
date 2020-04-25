@@ -35,18 +35,10 @@ class App extends Component {
       authURL: authURL,
       messengerHistory: "",
       Username: "",
+      profilesLoaded: false
     };
   }
-  componentWillMount() {
-    /*
-    console.log(this.props)
-    var query = queryString.parse(window.location.search);
-    if (query.user) {
-      window.localStorage.setItem("user", query.user);
-      console.log(window.localStorage);
-      this.props.history.push("/");
-   }*/
-  }
+
   componentDidMount() {
     this.sessionCheck();
     this.getDevCardArray();
@@ -67,7 +59,8 @@ class App extends Component {
       withCredentials: true
     }).then( res => {
       this.setState( { 
-          profiles: res
+          profiles: res.data,
+          profilesLoaded: true
       },this.logState)
       console.log("axios user fetch:", res);
     })
@@ -222,12 +215,14 @@ class App extends Component {
                             setMainViewState={this.setMainViewState}
                         >
                         </Sidebar>
-                      <DevCard
-                        sessionCheck={this.sessionCheck}
-                        {...routerProps}
-                        {...this.state}
-                        matches
-                      ></DevCard>
+                      {this.state.profilesLoaded === true ? 
+                        <DevCard
+                          sessionCheck={this.sessionCheck}
+                          {...routerProps}
+                          {...this.state}
+                          matches
+                        ></DevCard>
+                        : '<div>DevCard Not yet loaded.</div>' }
                       </>
                     );
                   }}
