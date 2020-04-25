@@ -57,6 +57,20 @@ class App extends Component {
     window.location = this.state.authURL;
   };
 
+  getDevCardArray = () => {
+    let url = "https://tigerkingbackend.herokuapp.com/users";
+    axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      withCredentials: true
+    }).then( res => {
+      this.setState( { 
+          profiles: res
+      })
+    })
+  }
+
   setMainViewState = (force = "") => {
     console.log("the state ");
     console.log(this.state);

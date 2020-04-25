@@ -33,7 +33,9 @@ class DevCard extends Component {
         if(this.props.callback) this.props.callback();
         if(this.props.hideButtons === 'true') this.setState({ hideButtons: true});
 
-        this.getUserFromDatabase();
+        // this.getUserFromDatabase();
+
+        console.log("DevCard props: ", this.props);
         
     }
 
