@@ -100,20 +100,18 @@ class App extends Component {
     axios.get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
        
     //.get("http://localhost:4000/sessioncheck", {
-      //  withCredentials: true,
+        withCredentials: true,
         headers: {
+         
           "Content-Type": "application/json",
         },
       })
       .then((res) => {
         console.log("check the data");
         console.log(res);
-        console.log(res.data);
         if (res.data === undefined || res.data === null) {
           console.log("the res data is null");
         } else {
-          console.log("i am try to check");
-          console.log(res.data);
           if (res.data._id !== undefined) {
             this.setState(
               {
@@ -144,7 +142,7 @@ class App extends Component {
         // }
       });
 
-    console.log("checked");
+    //console.log("checked");
     //pseudocode
     /* fetch GET credentials:include
     url api/sessioncheck
@@ -250,7 +248,6 @@ class App extends Component {
         </Router>
       );
     } else {
-      console.log("this auth is false,");
       return (
         <header className="App-header">
           <div className="landing">
