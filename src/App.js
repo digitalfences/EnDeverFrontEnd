@@ -49,7 +49,8 @@ class App extends Component {
   }
   componentDidMount() {
     this.sessionCheck();
-    this.setMainViewState();
+    this.getDevCardArray();
+    this.setMainViewState(); 
   }
 
   testStateChange = () => {
