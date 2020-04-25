@@ -24,10 +24,11 @@ class App extends Component {
   constructor() {
     super();
     //temporary...
-    let authURL = "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
+    // let authURL = "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
     // let authURL = "https://github.com/login/oauth/authorize?client_id=fda597fe607c7161f2a0&&redirect_uri=https://tigerkingbackend.herokuapp.com/auth/github/callback"
       //"https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback";
     // let authURL = 'http://localhost:4000/auth/github';
+    let authURL = 'https://tigerkingbackend.herokuapp.com/login';
     this.state = {
       auth: false,
       primaryDisplay: "messenger",
@@ -96,9 +97,10 @@ class App extends Component {
   };
   sessionCheck = () => {
     // console.log(document.cookie);
-    axios.get("http://localhost:4000/sessioncheck", {
-      // .get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
-        withCredentials: true,
+    axios.get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
+       
+    //.get("http://localhost:4000/sessioncheck", {
+      //  withCredentials: true,
         headers: {
           "Content-Type": "application/json",
         },
