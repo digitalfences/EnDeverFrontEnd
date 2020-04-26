@@ -90,7 +90,7 @@ class DevCard extends Component {
             // let url = this.props.url;
 
             let name = this.props.profile.Account.name == "" || null || undefined ? 'Bob': this.props.profile.Account.name;
-            let work = this.props.profile.Account.work == "" || null || undefined ? 'EnDever, LLC': this.props.profile.Account.work;
+            let work = "work" in this.props.profile.Account ? this.props.profile.Account.work : 'EnDever, LLC';
             let bio = this.props.profile.Account.Bio == "" ? 'This is the default bio.': this.props.profile.Account.Bio;
             let repos = Array.isArray(this.props.profile.Account.Repositories) && this.props.profile.Account.Repositories.length >= 3 ? this.props.profile.Account.Repositories.slice(0,3): ['Not', 'Enough', 'Repos'];
             let username = this.props.profile.UserName === "" ? 'JimBob': this.props.profile.UserName;
