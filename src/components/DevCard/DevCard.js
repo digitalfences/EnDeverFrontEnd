@@ -81,7 +81,7 @@ class DevCard extends Component {
         // let  lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.";
         // let url = 'https://picsum.photos/380/380';
         
-        if(this.props) {
+        // if(this.props) {
             // let name = he.encode(this.props.name);
             // let work = he.encode(this.props.work);
             // let bio = he.encode(this.props.bio);
@@ -97,7 +97,7 @@ class DevCard extends Component {
             let picture = this.props.profile.Account.Picture === "" ? ProfileDefault : this.props.profile.Account.Picture; 
 
             console.log("props", this.props); 
-        }
+        // }
      
             // let name = "Test Testerer"
             // let work = "Google, Inc."
