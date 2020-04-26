@@ -7,12 +7,12 @@ import {
   Redirect,
 } from "react-router-dom";
 import axios from "axios";
-import logo from "./logo.svg";
 import endevercircle from "./img/endevercircle.png";
 import GitHubLogo from "./img/GitHub_Logo_White.png";
+
 import "./App.css";
 import "./fonts/fonts.css";
-import queryString from "query-string";
+
 
 //For testing
 import Navbar from "./components/Navbar/Navbar";
@@ -65,6 +65,34 @@ class App extends Component {
       console.log("axios user fetch:", res);
     })
   }
+
+  renderDevCard = () => {
+    if(Array.isArray(this.state.profiles)) {
+      let stateProfileArray = this.state.profiles.slice();
+      let currentProfile = stateProfileArray.shift();
+
+
+
+      return (<DevCard 
+                sessionCheck={this.sessionCheck} 
+                profile={currentProfile}
+                swipeLeft={this.swipeLeft}
+                swipeRight={this.swipeRight}
+              />);
+      
+
+    }
+  } 
+
+  swipeRight = () => {
+    alert('yay');
+  }
+
+  swipeLeft = () => {
+    alert('nay');
+  }
+
+
 
   setMainViewState = (force = "") => {
     console.log("the state ");
@@ -216,12 +244,13 @@ class App extends Component {
                         >
                         </Sidebar>
                       {this.state.profilesLoaded === true ? 
-                        <DevCard
-                          sessionCheck={this.sessionCheck}
-                          {...routerProps}
-                          {...this.state}
-                          matches
-                        ></DevCard>
+                        // <DevCard
+                        //   sessionCheck={this.sessionCheck}
+                        //   {...routerProps}
+                        //   {...this.state}
+                        //   matches
+                        // ></DevCard>
+                          {renderDevCard()}
                         : '<div>DevCard Not yet loaded.</div>' }
                       </>
                     );

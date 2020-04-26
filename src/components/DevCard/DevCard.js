@@ -13,6 +13,7 @@ import workicon from "../../img/workicon.png";
 import PullRequestIcon from '../../img/git-pull-request.png';
 import NoIcon from '../../img/X.png';
 import DevCardButton from '../DevCardButton/DevCardButton';
+import ProfileDefault from '../../img/profiledefault.png';
 
 
 
@@ -78,7 +79,7 @@ class DevCard extends Component {
     render() {
         
         // let  lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.";
-        let url = 'https://picsum.photos/380/380';
+        // let url = 'https://picsum.photos/380/380';
         
         if(this.props) {
             // let name = he.encode(this.props.name);
@@ -87,6 +88,14 @@ class DevCard extends Component {
             // let githubname = this.props.githubname;
             // let { projects } = this.props.projects;   
             // let url = this.props.url;
+
+            let name = this.props.profile.Account.name === "" ? 'Bob': this.props.profile.Account.name;
+            let work = this.props.profile.Account.work === "" ? 'Google, inc': this.props.profile.Account.work;
+            let bio = this.props.profile.Account.Bio === "" ? 'This is the default bio.': this.props.profile.Account.Bio;
+            let repos = Array.isArray(this.props.profile.Account.Repositories) ? this.props.profile.Account.Repositories.slice(0,3): ['No', 'Repos', 'Specified'];
+            let username = this.props.profile.UserName === "" ? 'JimBob': this.props.profile.UserName;
+            let picture = this.props.profile.Account.Picture === "" ? ProfileDefault : this.props.profile.Account.Picture; 
+
             console.log("props", this.props); 
         }
      
@@ -98,57 +107,27 @@ class DevCard extends Component {
             // console.log("no props");     
         
         
-        if("card" in this.state) {   
+        // if("card" in this.state) {   
             
-            let {cardID, cardGHuser, cardBio, cardPicture, cardRepos} = this.state.card;
+            // let {cardID, cardGHuser, cardBio, cardPicture, cardRepos} = this.state.card;
         return (
-            // <div className="DevCard">
-            //     <div className="DevCard__Image"><img src={url} /></div>
-            //     <div className="DevCard__UserInfo">
-            //     <div className="DevCard__UserInfo__Left">
-            //         <div className="DevCard__UserInfo__Name">
-            //             {name}
-            //         </div>
-            //         <div className="DevCard__UserInfo__Work"><img src={workicon} />{work}</div>
-            //         <hr className="divider" />
-            //         <div className="DevCard__UserInfo__Bio">{bio}</div>
-            //     </div>
-            //     <div className="DevCard__UserInfo__Right">
-            //         <div className="DevCard__UserInfo__GitHub"><img src={GitHubMark} />{githubname}</div>
-            //         <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{projects[0]}</div>
-            //         <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{projects[1]}</div>
-            //         <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{projects[2]}</div>
-            //     </div>
-               
-            //     </div>
-            //     <hr className="BottomDivider" />
 
-            //     <div className="DevCardButton__Container">
-            //         <div>
-   
-            //            <DevCardButton orientation="left" icon={NoIcon} callback={this.sampleCallback} />
-            //             <DevCardButton orientation="right" icon={PullRequestIcon} callback={this.sampleCallback} />        
-
-                 
-            //     </div>
-            //     </div>
-            // </div>
             <div className="DevCard">
-            <div className="DevCard__Image"><img src={cardPicture} /></div>
+            <div className="DevCard__Image"><img src={name} /></div>
             <div className="DevCard__UserInfo">
             <div className="DevCard__UserInfo__Left">
                 <div className="DevCard__UserInfo__Name">
                     {/* {name} */}
                 </div>
-                <div className="DevCard__UserInfo__Work"><img src={workicon} /></div>
+                <div className="DevCard__UserInfo__Work"><img src={workicon} />{work}</div>
                 <hr className="divider" />
-                <div className="DevCard__UserInfo__Bio">{cardBio}</div>
+                <div className="DevCard__UserInfo__Bio">{bio}</div>
             </div>
             <div className="DevCard__UserInfo__Right">
-                <div className="DevCard__UserInfo__GitHub"><img src={GitHubMark} />{cardGHuser}</div>
-                <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{cardRepos[0]}</div>
-                <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{cardRepos[1]}</div>
-                <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{cardRepos[2]}</div>
+                <div className="DevCard__UserInfo__GitHub"><img src={GitHubMark} />{username}</div>
+                <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{repos[0]}</div>
+                <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{repos[1]}</div>
+                <div className="DevCard__UserInfo__GitHub__Projects"><img src={projecticon} />{repos[2]}</div>
             </div>
            
             </div>
@@ -157,21 +136,21 @@ class DevCard extends Component {
             <div className="DevCardButton__Container">
                 <div>
 
-                   <DevCardButton orientation="left" icon={NoIcon} callback={this.sampleCallback} />
-                    <DevCardButton orientation="right" icon={PullRequestIcon} callback={this.sampleCallback} />        
+                   <DevCardButton orientation="left" icon={NoIcon} callback={this.props.swipeLeft} />
+                    <DevCardButton orientation="right" icon={PullRequestIcon} callback={this.props.swipeRight} />        
 
              
             </div>
             </div>
         </div>
             );
-        }
-        else {
-            return(
-                <div>Loading...</div>
+        // }
+        // else {
+        //     return(
+        //         <div>Loading...</div>
 
-            );
-        }
+        //     );
+        // }
     }
 }
 
