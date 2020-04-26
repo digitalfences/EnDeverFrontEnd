@@ -250,7 +250,7 @@ class App extends Component {
                         //   {...this.state}
                         //   matches
                         // ></DevCard>
-                          {renderDevCard()}
+                          this.renderDevCard()
                         : '<div>DevCard Not yet loaded.</div>' }
                       </>
                     );
