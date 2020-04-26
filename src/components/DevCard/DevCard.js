@@ -113,11 +113,11 @@ class DevCard extends Component {
         return (
 
             <div className="DevCard">
-            <div className="DevCard__Image"><img src={name} /></div>
+            <div className="DevCard__Image"><img src={picture} /></div>
             <div className="DevCard__UserInfo">
             <div className="DevCard__UserInfo__Left">
                 <div className="DevCard__UserInfo__Name">
-                    {/* {name} */}
+                    {name}
                 </div>
                 <div className="DevCard__UserInfo__Work"><img src={workicon} />{work}</div>
                 <hr className="divider" />
