@@ -67,6 +67,11 @@ class App extends Component {
     })
   }
 
+  reloadDevCard = () => {
+    this.setState({profilesLoaded: false}
+      , this.setState({profilesLoaded: true}))
+  }
+
   renderDevCard = () => {
     if(Array.isArray(this.state.profiles)) {
       let stateProfileArray = this.state.profiles.slice();
@@ -82,6 +87,7 @@ class App extends Component {
                 profile={currentProfile}
                 swipeLeft={this.swipeLeft}
                 swipeRight={this.swipeRight}
+                reload={this.reloadDevCard}
               />);
       
 
@@ -95,7 +101,7 @@ class App extends Component {
     this.setState({
         currentProfile: nextProfile,
         profiles: stateProfileArray
-    })
+    }, this.reloadDevCard)
 
     console.log("swiped right");
 
