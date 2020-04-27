@@ -44,7 +44,10 @@
     animation: fadeInDown 1.0s;
 }
 .DevCard__Image > img {
+    object-fit: cover;
     max-width: 380px;
+    width: 380px;
+
     
     /* max-height: 380px; */
     /* border-radius: 0.6em; */
