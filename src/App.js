@@ -11,6 +11,7 @@ import endevercircle from "./img/endevercircle.png";
 import GitHubLogo from "./img/GitHub_Logo_White.png";
 
 import "./App.css";
+import "./animate.css";
 import "./fonts/fonts.css";
 
 
@@ -72,6 +73,9 @@ class App extends Component {
       let currentProfile = stateProfileArray.shift();
 
 
+      this.setState( { currentProfile: currentProfile } );
+
+
 
       return (<DevCard 
                 sessionCheck={this.sessionCheck} 
@@ -85,7 +89,19 @@ class App extends Component {
   } 
 
   swipeRight = () => {
-    alert('yay');
+    // alert('yay');
+    let stateProfileArray = this.state.profiles;
+    let nextProfile = stateProfileArray.shift();
+    this.setState({
+        currentProfile: nextProfile,
+        profiles: stateProfileArray
+    })
+
+    console.log("swiped right");
+
+    // let nextProfile = this.state.profiles[0];
+
+
   }
 
   swipeLeft = () => {
@@ -250,7 +266,7 @@ class App extends Component {
                         //   {...this.state}
                         //   matches
                         // ></DevCard>
-                          this.renderDevCard()
+                          this.renderDevCard() 
                         : '<div>DevCard Not yet loaded.</div>' }
                       </>
                     );
