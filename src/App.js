@@ -89,17 +89,17 @@ class App extends Component {
   } 
 
   swipeRight = () => {
-    // alert('yay');
-    let stateProfileArray = this.state.profiles;
-    let nextProfile = stateProfileArray.shift();
-    this.setState({
-        currentProfile: nextProfile,
-        profiles: stateProfileArray
-    })
+    alert('yay');
+    // let stateProfileArray = this.state.profiles;
+    // let nextProfile = stateProfileArray.shift();
+    // this.setState({
+    //     currentProfile: nextProfile,
+    //     profiles: stateProfileArray
+    // })
 
-    console.log("swiped right");
+    // console.log("swiped right");
 
-    let nextProfile = this.state.profiles[0];
+    // let nextProfile = this.state.profiles[0];
 
 
   }
