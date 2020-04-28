@@ -143,9 +143,9 @@ class App extends Component {
     this.setState({
         // currentProfile: nextProfile,
         profiles: stateProfileArray,
-        primaryDisplay: "cards"
+        profilesLoaded: false
 
-    })
+    }, this.toggleLoaded)
 
     console.log("swiped right");
 
@@ -162,12 +162,17 @@ class App extends Component {
       stateProfileArray.push(stateProfileArray.shift());
       this.setState({
           profiles: stateProfileArray,
-          primaryDisplay: "cards"
-      })
+          profilesLoaded: false
+      }, this.toggleLoaded)
 
       console.log("swiped left");
   }
 
+  toggleLoaded = () => {
+    this.setState({
+      profilesLoaded: !this.state.profilesLoaded
+    })
+  }
 
 
   setMainViewState = (force = "") => {
