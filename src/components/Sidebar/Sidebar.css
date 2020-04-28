@@ -124,12 +124,14 @@
 
 .Sidebar__Profile__Picture {
     width: 50px;
-    height: 50px;
+    /* height: 50px; */
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #f1f1f1;
-    padding-right: 1em;
-    padding-top: 0.1em;
+    /* padding-right: 1em; */
+    /* padding-top: 0.1em; */
+    margin-right: 1em;
+    margin-top: 0.1em;
 }
 
 @keyframes fadeInUp {
