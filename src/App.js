@@ -95,9 +95,9 @@ class App extends Component {
   swipeRight = () => {
     // alert('yay');
     let stateProfileArray = this.state.profiles;
-    let nextProfile = stateProfileArray.shift();
+    // let nextProfile = stateProfileArray.shift();
     this.setState({
-        currentProfile: nextProfile,
+        // currentProfile: nextProfile,
         profiles: stateProfileArray
     })
 
@@ -109,7 +109,16 @@ class App extends Component {
   }
 
   swipeLeft = () => {
-    alert('nay');
+    // alert('nay');
+    let stateProfileArray = this.state.profiles;
+    // let currentProfile = stateProfileArray.shift();
+
+      stateProfileArray.push(stateProfileArray.shift());
+      this.setState({
+          profiles: stateProfileArray
+      })
+
+      console.log("swiped left");
   }
 
 
