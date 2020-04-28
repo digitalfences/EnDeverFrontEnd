@@ -8,7 +8,7 @@ class NoProfiles extends Component {
         return (
             <div className="NoProfiles">
                 <div>
-                You ran out of profiles to swipe through. Maybe consider &nbsp; <Link to="/profile/edit">updating yours</Link> to get more matches.
+                You ran out of profiles to swipe through. Consider &nbsp;<Link to="/profile/edit">updating yours</Link> to get more matches.
                 </div>
             </div>
         );
