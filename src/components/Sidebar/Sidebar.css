@@ -124,7 +124,7 @@
 
 .Sidebar__Profile__Picture {
     max-width: 50px;
-    border-radius: 25%;
+    border-radius: 50%;
     border: 2px solid #f1f1f1;
     padding-right: 1em;
     padding-top: 0.1em;
