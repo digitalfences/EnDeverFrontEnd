@@ -68,13 +68,13 @@ class App extends Component {
   }
 
   reloadDevCard = () => {
-    // this.setState({profilesLoaded: false}).then(this.setState({profilesLoaded: true}))
+    // this.setState({profilesLoaded: false}).then(this.setState({profilesLoaded: true})))
   }
 
   renderDevCard = () => {
-    // if(Array.isArray(this.state.profiles)) {
-    //   let stateProfileArray = this.state.profiles.slice();
-    //   let currentProfile = stateProfileArray.shift();
+    if(Array.isArray(this.state.profiles)) {
+      let stateProfileArray = this.state.profiles.slice();
+      let currentProfile = stateProfileArray.shift();
 
 
       // this.setState( { currentProfile: currentProfile } );
@@ -98,10 +98,8 @@ class App extends Component {
     let nextProfile = stateProfileArray.shift();
     this.setState({
         currentProfile: nextProfile,
-        profiles: stateProfileArray,
-        profilesLoaded: false
-    }, this.setState({ profilesLoaded: true}))
-
+        profiles: stateProfileArray
+    })
 
     console.log("swiped right");
 
@@ -192,12 +190,8 @@ class App extends Component {
   };
 
   render() {
-    // console.log(" begin render");
-    // console.log(this.state.auth);
-
-    let stateProfileArray = this.state.profiles.slice();
-    let currentProfile = stateProfileArray.shift();
-
+    console.log(" begin render");
+    console.log(this.state.auth);
     if (this.state.auth === true) {
       return (
         <Router>
@@ -276,13 +270,7 @@ class App extends Component {
                         //   {...this.state}
                         //   matches
                         // ></DevCard>
-                        
-                        <DevCard sessionCheck={this.sessionCheck} 
-                                 profile={currentProfile}
-                                 swipeLeft={this.swipeLeft}
-                                 swipeRight={this.swipeRight} />
-
-                          // this.renderDevCard() 
+                          this.renderDevCard() 
                         : '<div>DevCard Not yet loaded.</div>' }
                       </>
                     );
