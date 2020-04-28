@@ -24,7 +24,7 @@
     
 }
 
-.NoProfiles > a {
+.NoProfiles > div > a {
     color: #d42257;
     text-decoration: none;
 }
