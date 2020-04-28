@@ -68,7 +68,7 @@ class App extends Component {
   }
 
   reloadDevCard = () => {
-    this.setState({profilesLoaded: false}).then(this.setState({profilesLoaded: true}))
+    // this.setState({profilesLoaded: false}).then(this.setState({profilesLoaded: true}))
   }
 
   renderDevCard = () => {
@@ -99,7 +99,7 @@ class App extends Component {
     this.setState({
         currentProfile: nextProfile,
         profiles: stateProfileArray
-    }, this.reloadDevCard)
+    })
 
     console.log("swiped right");
 
