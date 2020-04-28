@@ -142,7 +142,9 @@ class App extends Component {
     stateProfileArray.shift();
     this.setState({
         // currentProfile: nextProfile,
-        profiles: stateProfileArray
+        profiles: stateProfileArray,
+        primaryDisplay: "cards"
+
     })
 
     console.log("swiped right");
@@ -159,7 +161,8 @@ class App extends Component {
 
       stateProfileArray.push(stateProfileArray.shift());
       this.setState({
-          profiles: stateProfileArray
+          profiles: stateProfileArray,
+          primaryDisplay: "cards"
       })
 
       console.log("swiped left");
