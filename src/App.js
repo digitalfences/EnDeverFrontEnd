@@ -72,9 +72,9 @@ class App extends Component {
   }
 
   renderDevCard = () => {
-    if(Array.isArray(this.state.profiles)) {
-      let stateProfileArray = this.state.profiles.slice();
-      let currentProfile = stateProfileArray.shift();
+    // if(Array.isArray(this.state.profiles)) {
+    //   let stateProfileArray = this.state.profiles.slice();
+    //   let currentProfile = stateProfileArray.shift();
 
 
       // this.setState( { currentProfile: currentProfile } );
