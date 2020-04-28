@@ -62,7 +62,7 @@ class Sidebar extends Component {
         return (
             <div className="Sidebar">
                 <div className="Sidebar__Profile" onClick={this.toggleSidebarProfileEdit}>
-                    <div className=""><img className="Sidebar__Profile__Picture" src={picture} /></div>
+                    <img className="Sidebar__Profile__Picture" src={picture} />
                     <div>{username}</div>
                 </div>
 

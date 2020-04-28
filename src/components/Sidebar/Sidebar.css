@@ -28,6 +28,7 @@
     border-bottom: 1px solid black;
 }
 
+
 .Sidebar__Views {
     display: flex;
     flex-flow: row nowrap;
@@ -125,6 +126,8 @@
     max-width: 50px;
     border-radius: 25%;
     border: 2px solid #f1f1f1;
+    padding-right: 1em;
+    padding-top: 0.1em;
 }
 
 @keyframes fadeInUp {
