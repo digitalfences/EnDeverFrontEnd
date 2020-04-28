@@ -121,6 +121,12 @@
     z-index: 0;
 }
 
+.Sidebar__Profile__Picture {
+    max-width: 50px;
+    border-radius: 25%;
+    border: 2px solid #f1f1f1;
+}
+
 @keyframes fadeInUp {
     0% {
         transform: translateY(-100%);

@@ -259,7 +259,7 @@ class App extends Component {
                   render={(routerProps) => {
                     return (
                       <Sidebar 
-                        username={this.state.UserName}
+                        username={this.state.Username}
                         picture={this.state.Account.Picture}
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
@@ -276,7 +276,7 @@ class App extends Component {
                   render={(routerProps) => {
                     return (
                       <Sidebar
-                      username={this.state.UserName}
+                      username={this.state.Username}
                       picture={this.state.Account.Picture} 
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
@@ -295,7 +295,7 @@ class App extends Component {
                     //this.setMessengerID();
                     return (
                       <Sidebar
-                      username={this.state.UserName}
+                      username={this.state.Username}
                       picture={this.state.Account.Picture}
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
@@ -314,7 +314,7 @@ class App extends Component {
                     return (
                         <>
                         <Sidebar 
-                            username={this.state.UserName}
+                            username={this.state.Username}
                             picture={this.state.Account.Picture}
                             sessionCheck={this.sessionCheck}
                             {...routerProps}
