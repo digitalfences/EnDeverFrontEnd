@@ -4,8 +4,10 @@ import axios from 'axios';
 
 
 import './DevCard.css';
+import '../../animate.css';
 
 import '../DevCardButton/DevCardButton';
+
 
 import GitHubMark from '../../img/GitHub-Mark-120px-plus.png';
 import projecticon from '../../img/projecticon.png';

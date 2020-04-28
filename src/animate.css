@@ -3144,7 +3144,7 @@
   animation-name: zoomOut;
 }
 
-@-webkit-keyframes zoomOutDown {
+@-webkit-keyframes zoomOutDown-leave {
   40% {
     opacity: 1;
     -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
@@ -3164,7 +3164,7 @@
   }
 }
 
-@keyframes zoomOutDown {
+@keyframes zoomOutDown-leave {
   40% {
     opacity: 1;
     -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
@@ -3184,9 +3184,9 @@
   }
 }
 
-.zoomOutDown {
-  -webkit-animation-name: zoomOutDown;
-  animation-name: zoomOutDown;
+.zoomOutDown-leave {
+  -webkit-animation-name: zoomOutDown-leave;
+  animation-name: zoomOutDown-leave;
 }
 
 @-webkit-keyframes zoomOutLeft {
