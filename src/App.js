@@ -37,6 +37,9 @@ class App extends Component {
       authURL: authURL,
       messengerHistory: "",
       Username: "",
+      Bio: "",
+      WorkPlace: "",
+      RealName: "", 
       profilesLoaded: false
     };
   }
@@ -45,12 +48,48 @@ class App extends Component {
     this.sessionCheck();
     this.getDevCardArray();
     this.setMainViewState(); 
+    this.getMyUserData();
   }
 
   testStateChange = () => {
     // this.setState({ auth: true });
     window.location = this.state.authURL;
   };
+
+
+  getMyUserData = () => {
+    let account = this.state.Account;
+    axios.get(`https://tigerkingbackend.herokuapp.com/account/id/${account}`, {
+       
+      withCredentials: true,
+      headers: {
+       
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => {
+      // console.log(res);
+      if (res.data === undefined || res.data === null) {
+        console.log("the account fetch data is null");
+      } else {
+        if (res.data._id !== undefined) {
+          this.setState(
+            {
+              Bio: res.data.Account.Bio,
+              Picture: res.data.Account.Picture,
+              // Account: res.data.Account,
+              // Login: res.data.Login,
+            },
+            this.logState
+          );
+        } else {
+          console.log("res.data._id is null");
+        }
+      }
+
+    });
+
+  }
 
   getDevCardArray = () => {
     let url = "https://tigerkingbackend.herokuapp.com/users";
@@ -92,6 +131,7 @@ class App extends Component {
 
     }
   } 
+
 
   swipeRight = () => {
     // alert('yay');
@@ -167,10 +207,8 @@ class App extends Component {
     console.log(this.state);
   };
   sessionCheck = () => {
-    // console.log(document.cookie);
     axios.get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
        
-    //.get("http://localhost:4000/sessioncheck", {
         withCredentials: true,
         headers: {
          
@@ -191,6 +229,7 @@ class App extends Component {
                 Username: res.data.UserName,
                 Account: res.data.Account,
                 Login: res.data.Login,
+                Matches: res.data
               },
               this.logState
             );

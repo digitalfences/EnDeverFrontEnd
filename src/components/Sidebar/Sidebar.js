@@ -29,6 +29,7 @@ class Sidebar extends Component {
 
     }
 
+
     setMatchesView = () => {
         this.setState( { sidebarDisplay: 'matches' } );
 
@@ -58,8 +59,8 @@ class Sidebar extends Component {
         return (
             <div className="Sidebar">
                 <div className="Sidebar__Profile" onClick={this.toggleSidebarProfileEdit}>
-                    <div>O</div>
-                    <div>My Profile</div>
+                    <div className=""><img src="" /></div>
+                    <div>My ProMy Profile</div>
                 </div>
 
                 <div className="Sidebar__Views">
