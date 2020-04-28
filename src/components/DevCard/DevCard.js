@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-transition-group';
 import he from 'he';
 import axios from 'axios';
 
@@ -114,6 +115,7 @@ class DevCard extends Component {
             // let {cardID, cardGHuser, cardBio, cardPicture, cardRepos} = this.state.card;
         return (
 
+
             <div className="DevCard">
             <div className="DevCard__Image"><img src={picture} /></div>
             <div className="DevCard__UserInfo">
@@ -145,6 +147,7 @@ class DevCard extends Component {
             </div>
             </div>
         </div>
+
             );
         // }
         // else {
