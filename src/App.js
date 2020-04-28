@@ -37,7 +37,7 @@ class App extends Component {
       authURL: authURL,
       messengerHistory: "",
       Username: "",
-      Bio: "",
+      // Bio: "",
       WorkPlace: "",
       RealName: "", 
       profilesLoaded: false
@@ -229,7 +229,7 @@ class App extends Component {
                 Username: res.data.UserName,
                 Account: res.data.Account,
                 Login: res.data.Login,
-                Matches: res.data
+                Matches: res.data.Account.MatchedUsers
               },
               this.logState
             );
@@ -258,7 +258,9 @@ class App extends Component {
                   path="/messages"
                   render={(routerProps) => {
                     return (
-                      <Sidebar
+                      <Sidebar 
+                        username={this.state.UserName}
+                        picture={this.state.Account.Picture}
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
                         {...this.state}
@@ -274,6 +276,8 @@ class App extends Component {
                   render={(routerProps) => {
                     return (
                       <Sidebar
+                      username={this.state.UserName}
+                      picture={this.state.Account.Picture} 
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
                         {...this.state}
@@ -291,6 +295,8 @@ class App extends Component {
                     //this.setMessengerID();
                     return (
                       <Sidebar
+                      username={this.state.UserName}
+                      picture={this.state.Account.Picture}
                         sessionCheck={this.sessionCheck}
                         {...routerProps}
                         {...this.state}
@@ -307,7 +313,9 @@ class App extends Component {
                     // this.setMainViewState("cards");
                     return (
                         <>
-                        <Sidebar
+                        <Sidebar 
+                            username={this.state.UserName}
+                            picture={this.state.Account.Picture}
                             sessionCheck={this.sessionCheck}
                             {...routerProps}
                             {...this.state}

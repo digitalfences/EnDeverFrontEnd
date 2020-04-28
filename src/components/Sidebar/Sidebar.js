@@ -54,13 +54,16 @@ class Sidebar extends Component {
        
         let url = 'https://picsum.photos/98/98';
 
+        let username = this.props.username;
+        let picture = this.props.picture;
+
      
 
         return (
             <div className="Sidebar">
                 <div className="Sidebar__Profile" onClick={this.toggleSidebarProfileEdit}>
-                    <div className=""><img src="" /></div>
-                    <div>My ProMy Profile</div>
+                    <div className=""><img className="Sidebar__Profile__Picture" src={picture} /></div>
+                    <div>{username}</div>
                 </div>
 
                 <div className="Sidebar__Views">
