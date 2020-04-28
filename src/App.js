@@ -20,6 +20,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import DevCard from "./components/DevCard/DevCard";
 import Messenger from "./components/Messenger/Messenger";
+import NoProfiles from './components/NoProfiles/NoProfiles';
 
 class App extends Component {
   constructor() {
@@ -95,7 +96,10 @@ class App extends Component {
   swipeRight = () => {
     // alert('yay');
     let stateProfileArray = this.state.profiles;
-    // let nextProfile = stateProfileArray.shift();
+    if(this.state.profiles.length === 1) {
+        this.setState({ profilesLoaded: false })
+    }
+    stateProfileArray.shift();
     this.setState({
         // currentProfile: nextProfile,
         profiles: stateProfileArray
@@ -280,7 +284,7 @@ class App extends Component {
                         //   matches
                         // ></DevCard>
                           this.renderDevCard() 
-                        : '<div>DevCard Not yet loaded.</div>' }
+                        : <NoProfiles /> }
                       </>
                     );
                   }}
