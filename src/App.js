@@ -68,7 +68,7 @@ class App extends Component {
   }
 
   reloadDevCard = () => {
-    this.setState({profilesLoaded: false}).then(this.setState({profilesLoaded: true})))
+    this.setState({profilesLoaded: false}).then(this.setState({profilesLoaded: true}))
   }
 
   renderDevCard = () => {
