@@ -98,8 +98,10 @@ class App extends Component {
     let nextProfile = stateProfileArray.shift();
     this.setState({
         currentProfile: nextProfile,
-        profiles: stateProfileArray
-    })
+        profiles: stateProfileArray,
+        profilesLoaded: false
+    }, this.setState({ profilesLoaded: true}))
+
 
     console.log("swiped right");
 
@@ -190,8 +192,12 @@ class App extends Component {
   };
 
   render() {
-    console.log(" begin render");
-    console.log(this.state.auth);
+    // console.log(" begin render");
+    // console.log(this.state.auth);
+
+    let stateProfileArray = this.state.profiles.slice();
+    let currentProfile = stateProfileArray.shift();
+
     if (this.state.auth === true) {
       return (
         <Router>
@@ -270,7 +276,13 @@ class App extends Component {
                         //   {...this.state}
                         //   matches
                         // ></DevCard>
-                          this.renderDevCard() 
+                        
+                        <DevCard sessionCheck={this.sessionCheck} 
+                                 profile={currentProfile}
+                                 swipeLeft={this.swipeLeft}
+                                 swipeRight={this.swipeRight} />
+
+                          // this.renderDevCard() 
                         : '<div>DevCard Not yet loaded.</div>' }
                       </>
                     );
