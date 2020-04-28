@@ -23,3 +23,8 @@
     /* transition: 0.5s ease; */
     
 }
+
+.NoProfiles > a {
+    color: #d42257;
+    text-decoration: none;
+}
