@@ -48,7 +48,7 @@ class App extends Component {
     this.sessionCheck();
     this.getDevCardArray();
     this.setMainViewState(); 
-    this.getMyUserData();
+    // this.getMyUserData();
   }
 
   testStateChange = () => {
