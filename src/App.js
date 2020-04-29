@@ -331,7 +331,7 @@ class App extends Component {
                             setMainViewState={this.setMainViewState}
                         >
                         </Sidebar>
-                      {this.state.profilesLoaded === true && (this.state.profiles != undefined) ? 
+                      {this.state.profilesLoaded === true && (this.state.profiles != null) ? 
                         // <DevCard
                         //   sessionCheck={this.sessionCheck}
                         //   {...routerProps}
