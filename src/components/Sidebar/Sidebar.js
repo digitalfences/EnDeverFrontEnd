@@ -113,10 +113,10 @@ class Sidebar extends Component {
 
             {this.state.sidebarEdit === 'true' ? 
             <div className="Zindex">
-                <DevProfile />
-
+                            {/* <DevProfile /> */}
+                    Edit My Profile
             </div>
-            
+                
              : ''}
 
 

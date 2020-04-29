@@ -54,7 +54,7 @@
 
 .Sidebar__Matches__Container {
 
-    /* border: 1px solid red; */
+    border: 1px solid red;
     /* justify-content: s; */
     /* border-right: 1px solid #ccc; */
 }
@@ -72,7 +72,7 @@
 
 .Sidebar__Message__Container {
 
-    /* border: 1px solid red; */
+    border: 1px solid red;
     /* justify-content: s; */
     /* border-right: 1px solid #ccc; */
     animation: fadeInUp 1.0s;
@@ -119,7 +119,8 @@
 }
 
 .Zindex {
-    z-index: 0;
+    /* z-index: 0; */
+    border: 1px solid blue;
 }
 
 .Sidebar__Profile__Picture {
