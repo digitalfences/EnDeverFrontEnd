@@ -44,7 +44,8 @@ class Sidebar extends Component {
     }
     
     toggleSidebarProfileEdit = () => {
-        this.setState({ sidebarEdit: !this.state.sidebarEdit }, this.logState);
+        let st = !this.state.sidebarEdit;
+        this.setState({ sidebarEdit: st }, this.logState);
 
     }
 
@@ -60,8 +61,8 @@ class Sidebar extends Component {
      
 
         return (
-            <div className="Sidebar">
-                <div className="Sidebar__Profile" onClick={this.toggleSidebarProfileEdit}>
+            <div className="Sidebar" onClick={this.toggleSidebarProfileEdit}>
+                <div className="Sidebar__Profile" >
                     <img className="Sidebar__Profile__Picture" src={picture} />
                     <div>{username}</div>
                 </div>
