@@ -125,7 +125,7 @@
 
 .Zindex {
     /* z-index: 0; */
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     color: white;
     display: flex;
     flex-flow: column-reverse nowrap;
@@ -158,6 +158,10 @@
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-align: center;
+    /* align-content: center; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     align-content: center;
 
 
@@ -178,6 +182,10 @@
 
 }
 
+.EditButton {
+    width: 100%;
+    
+}
 @keyframes fadeInUp {
     0% {
         transform: translateY(-100%);
