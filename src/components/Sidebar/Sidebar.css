@@ -124,9 +124,15 @@
 
 .Zindex {
     /* z-index: 0; */
-    border: 1px solid blue;
+    border: 1px solid pink;
     color: white;
-    align-self: flex-end;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    height: 100%;
+    width: 100%;
+
+
+    /* align-self: flex-end; */
 }
 
 .Sidebar__Profile__Picture {
@@ -139,6 +145,12 @@
     /* padding-top: 0.1em; */
     margin-right: 0.3em;
     margin-top: 0.1em;
+}
+
+
+.editMyProfile {
+    border: 1px solid yellow;
+    width: 100%;
 }
 
 @keyframes fadeInUp {
