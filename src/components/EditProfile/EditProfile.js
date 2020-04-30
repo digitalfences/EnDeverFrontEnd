@@ -31,7 +31,7 @@ class EditProfile extends Component {
     render() {
         return (
             <div className="EditMyProfile__Container">
-                <div className={this.state.class.join(' ')}>
+                <div className={this.state.class}>
                     <div className="EditButton">Edit My Profile</div>
                 </div>
                 
