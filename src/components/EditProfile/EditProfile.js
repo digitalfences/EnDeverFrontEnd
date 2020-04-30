@@ -15,7 +15,7 @@ class EditProfile extends Component {
         if(this.state.expanded === false) {
             this.setState({ 
                 expanded: true, 
-                class: 'EditMyProfile big'
+                class: 'EditMyProfile larger'
             })
         } 
         else {
@@ -31,7 +31,7 @@ class EditProfile extends Component {
     render() {
         return (
             <div className="EditMyProfile__Container">
-                <div className={this.state.class}>
+                <div className={this.state.class} onClick={this.expandEditor}>
                     <div className="EditButton">Edit My Profile</div>
                 </div>
                 
