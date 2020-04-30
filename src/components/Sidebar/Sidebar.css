@@ -124,6 +124,7 @@
 .Zindex {
     /* z-index: 0; */
     border: 1px solid blue;
+    color: white;
 }
 
 .Sidebar__Profile__Picture {
