@@ -70,10 +70,10 @@
 .DevProfile__Controls__Form {
     /* border-top: 1px solid #ccc; */
     /* border-bottom: 1px solid #ccc; */
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     font-weight: normal;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .DevProfile__Controls__Title {
