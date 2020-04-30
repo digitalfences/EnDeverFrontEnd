@@ -15,6 +15,10 @@ class EditProfile extends Component {
         }
     }
 
+    componentDidMount(){
+        console.log("Edit Profile Props:", this.props);
+    }
+
     expandEditor = () => {
         
         if(this.state.expanded === false) {
@@ -46,7 +50,7 @@ class EditProfile extends Component {
                         <form>
                         <DevProfileTextInput label="Name:"/>
                         <DevProfileTextInput label="Work:"/>
-                        <DevProfileTextInput label="Bio:" dbvalue={this.props.Account.Bio} />
+                        <DevProfileTextInput label="Bio:" />
 
                         <button className="DevProfile__Controls__Submit">Submit</button>
                         </form>
