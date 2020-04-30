@@ -115,7 +115,7 @@ class Sidebar extends Component {
 
             {/* {this.state.sidebarEdit === 'true' ?  */}
 
-            <EditProfile {...this.state} />
+            <EditProfile {...this.props.Account} />
                 
              {/* : ''} */}
 
