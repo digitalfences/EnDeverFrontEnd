@@ -8,6 +8,7 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
+    border: 1px solid green;
     
 }
 
@@ -125,6 +126,7 @@
     /* z-index: 0; */
     border: 1px solid blue;
     color: white;
+    align-self: flex-end;
 }
 
 .Sidebar__Profile__Picture {
