@@ -43,6 +43,9 @@
     cursor: pointer;
 }
 
+.EditExpanded {
+    justify-content: flex-start;
+}
 
 .EditMyProfile:hover {
     background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
@@ -53,10 +56,9 @@
 
 .EditButton {
     width: 100%;
-
 }
 
 .larger {
-    height: 100px;
+    height: 150px;
     transition: 0.5s ease;
 }

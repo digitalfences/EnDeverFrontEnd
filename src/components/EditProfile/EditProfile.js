@@ -6,7 +6,8 @@ class EditProfile extends Component {
         super();
         this.state = {
             expanded: false,
-            class: 'EditMyProfile'
+            class: 'EditMyProfile',
+            containerclass: ''
         }
     }
 
@@ -15,13 +16,15 @@ class EditProfile extends Component {
         if(this.state.expanded === false) {
             this.setState({ 
                 expanded: true, 
-                class: 'EditMyProfile larger'
+                class: 'EditMyProfile larger',
+                containerclass: ' EditExpanded'
             })
         } 
         else {
             this.setState({ 
                 expanded: false,
-                class: 'EditMyProfile'
+                class: 'EditMyProfile',
+                containerclass: ''
             })
         }
 
@@ -31,8 +34,8 @@ class EditProfile extends Component {
     render() {
         return (
             <div className="EditMyProfile__Container">
-                <div className={this.state.class} onClick={this.expandEditor}>
-                    <div className="EditButton">Edit My Profile</div>
+                <div className={this.state.class+this.state.containerclass} >
+                    <div className="EditButton" onClick={this.expandEditor}>Edit My Profile</div>
                 </div>
                 
             </div>
