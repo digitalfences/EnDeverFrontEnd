@@ -115,7 +115,9 @@ class Sidebar extends Component {
             {/* {this.state.sidebarEdit === 'true' ?  */}
             <div className="Zindex">
                             {/* <DevProfile /> */}
-                    <div className="EditMyProfile">Edit My Profile</div>
+                    <div className="EditMyProfile" onClick={alert('clicked')}>
+                        <div className="EditButton">Edit My Profile</div>
+                        </div>
             </div>
                 
              {/* : ''} */}
