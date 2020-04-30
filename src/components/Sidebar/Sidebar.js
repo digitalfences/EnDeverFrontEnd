@@ -115,7 +115,7 @@ class Sidebar extends Component {
             {/* {this.state.sidebarEdit === 'true' ?  */}
             <div className="Zindex">
                             {/* <DevProfile /> */}
-                    Edit My Profile
+                    <div className="EditMyProfile">Edit My Profile</div>
             </div>
                 
              {/* : ''} */}
