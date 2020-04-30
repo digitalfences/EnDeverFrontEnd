@@ -6,6 +6,7 @@ import './Sidebar.css';
 import MatchMini from '../MatchMini/MatchMini';
 import MessageMini from '../MessageMini/MessageMini';
 import DevProfile from '../DevProfile/DevProfile';
+import EditProfile from '../EditProfile/EditProfile'
 
 class Sidebar extends Component {
     constructor() {
@@ -113,12 +114,8 @@ class Sidebar extends Component {
             }
 
             {/* {this.state.sidebarEdit === 'true' ?  */}
-            <div className="Zindex">
-                            {/* <DevProfile /> */}
-                    <div className="EditMyProfile" onClick={alert('clicked')}>
-                        <div className="EditButton">Edit My Profile</div>
-                        </div>
-            </div>
+
+            <EditProfile {...this.state} />
                 
              {/* : ''} */}
 
