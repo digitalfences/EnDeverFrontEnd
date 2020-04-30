@@ -42,11 +42,12 @@ class EditProfile extends Component {
                     <div className="EditButton" onClick={this.expandEditor}>Edit My Profile</div>
 
                     { this.state.expanded === true ? 
-                        <div class="form">
-
+                        <div className="form">
+                        <form>
                         <DevProfileTextInput label="Name:"/>
-                        <DevProfileTextInput label="Workplace"/>
+                        <DevProfileTextInput label="Work:"/>
                         <DevProfileTextInput label="Bio:" />
+                        </form>
                         </div>
                     :
                         ''

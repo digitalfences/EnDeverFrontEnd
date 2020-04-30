@@ -65,3 +65,45 @@
     height: 150px;
     transition: 0.5s ease;
 }
+
+
+.DevProfile__Controls__Form {
+    /* border-top: 1px solid #ccc; */
+    /* border-bottom: 1px solid #ccc; */
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: normal;
+}
+
+.DevProfile__Controls__Title {
+    /* display: inline; */
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.DevProfile__Controls__Submit {
+        background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+        border: 1px solid #ccc;
+        border-radius: 0.5em;
+        /* width: 80%; */
+
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        user-select: none;
+        padding: 0.5em 1em;
+        margin-top: 1em;
+        /* margin-left: auto; */
+        /* text-align: right; */
+        float: right;
+    
+}
+.DevProfile__Controls__Submit:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+    transition: 0.5s ease;
+}
+
+.DevProfile__Controls__Submit:focus {
+    outline: none;
+}
