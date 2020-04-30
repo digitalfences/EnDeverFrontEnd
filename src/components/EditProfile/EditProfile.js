@@ -46,7 +46,7 @@ class EditProfile extends Component {
                         <form>
                         <DevProfileTextInput label="Name:"/>
                         <DevProfileTextInput label="Work:"/>
-                        <DevProfileTextInput label="Bio:" />
+                        <DevProfileTextInput label="Bio:" dbvalue={this.props.Account.Bio} />
 
                         <button className="DevProfile__Controls__Submit">Submit</button>
                         </form>
