@@ -41,14 +41,14 @@ class DevCard extends Component {
         let baseURL = "http://localhost:4000";
         // let baseURL = "http://tigerkingbackend.herokuapp.com/";
         let params = '/account/id/';
-        // let test = '5ea2d681052329686095572a';
-        let test = '5ea32037649af057e045d8ba';
+        let test = this.props._id;
+        console.log(this.props)
         let totalURL = baseURL+params+test;
 
         axios.get(totalURL, {
             withCredentials: true
         }).then(res => {
-            
+            console.log(res);
             let cardID = res.data[0]._id;
             let cardGHuser = res.data[0].UserName;
             let cardBio = res.data[0].Account.Bio;
@@ -84,7 +84,6 @@ class DevCard extends Component {
             // let githubname = this.props.githubname;
             // let { projects } = this.props.projects;   
             // let url = this.props.url;
-            console.log("props", this.props); 
         }
      
             // let name = "Test Testerer"

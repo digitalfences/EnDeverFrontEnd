@@ -142,7 +142,6 @@ class App extends Component {
         // }
       });
 
-    console.log("checked");
     //pseudocode
     /* fetch GET credentials:include
     url api/sessioncheck
