@@ -1,4 +1,4 @@
-import React, { Component  } from 'react';
+import React, { Component ,useState} from 'react';
 import {Link, Route} from 'react-router-dom';
 import '../../fonts/fonts.css';
 import './Sidebar.css';
@@ -7,21 +7,11 @@ import MatchMini from '../MatchMini/MatchMini';
 import MessageMini from '../MessageMini/MessageMini';
 import DevProfile from '../DevProfile/DevProfile';
 
-class Sidebar extends Component {
-    constructor() {
-        super()
-        this.state = {
-            sidebarDisplay: 'matches',
-            sidebarEdit: false
-        }
-    }
-    componentDidMount() {
-        if(this.props.callback) this.props.callback();
-        // console.log(this.props);
-        this.props.sessionCheck();
-    }
-
-    populateUserMatches = () => {
+const Sidebar = () => {
+    const [display, setDisplay] = useState('matches')
+    const [edit, setEdit] = useState('false');
+    let url = 'https://picsum.photos/98/98';
+    const populateUserMatches = () => {
 
         //foreach match in database
         //return <MatchMini name={name} photoURL={photoURL} />
@@ -29,65 +19,35 @@ class Sidebar extends Component {
 
     }
 
-    setMatchesView = () => {
-        this.setState( { sidebarDisplay: 'matches' } );
-
-    }
-
-    setMessagesView = () => {
-        this.setState( { sidebarDisplay: 'messages' } );
-    }
-
-    setCardView = () => {
-        this.props.setMainViewState("cards");
-    }
-    
-    toggleSidebarProfileEdit = () => {
-        this.setState({ sidebarEdit: !this.state.sidebarEdit }, this.logState);
-
-    }
-
-    logState = () => console.log(this.state);
-
-    render() {
-       
-        let url = 'https://picsum.photos/98/98';
-
-     
-
         return (
             <div className="Sidebar">
-                <div className="Sidebar__Profile" onClick={this.toggleSidebarProfileEdit}>
+                <div className="Sidebar__Profile" onClick={() => setEdit(!edit)}>
                     <div>O</div>
                     <div>My Profile</div>
                 </div>
 
                 <div className="Sidebar__Views">
 
-                { this.state.sidebarDisplay === 'matches' ?
+                { display === 'matches' ?
                     <>
-                        <div className="MatchesViewLink active" ><Link to="/" onClick={this.setMatchesView}>Matches</Link></div>
-                        <div className="MessagesViewLink"><Link to="/messages" onClick={this.setMessagesView}>Messages</Link></div>
+                        <div className="MatchesViewLink active" ><Link to="/" onClick={() => setDisplay('matches')}>Matches</Link></div>
+                        <div className="MessagesViewLink"><Link to="/messages" onClick={() => setDisplay('messages')}>Messages</Link></div>
                     </>
                 :
                 <>
-                    <div className="MatchesViewLink" ><Link to="/" onClick={this.setMatchesView}>Matches</Link></div>
-                    <div className="MessagesViewLink active"><Link to="/messages" onClick={this.setMessagesView}>Messages</Link></div>
+                    <div className="MatchesViewLink" ><Link to="/" onClick={() => setDisplay('matches')}>Matches</Link></div>
+                    <div className="MessagesViewLink active"><Link to="/messages" onClick={() => setDisplay('messages')}>Messages</Link></div>
                 </>
                 }
                 
                 </div>
 
 
-            {this.state.sidebarDisplay === 'matches' ? 
+            {display === 'matches' ? 
 
                     <div className="Sidebar__Matches__Container">
                     <div className="Sidebar__Matches__Container__Mini">
-                        <MatchMini name="Daniel" photoURL={url} /> 
-                        <MatchMini name="Galen" photoURL={url} /> 
-                        <MatchMini name="Shimin" photoURL={url} /> 
-                        <MatchMini name="Roger" photoURL={url} /> 
-                        <MatchMini name="Noah" photoURL={url} /> 
+                      
                         </div>
                     </div>
 
@@ -95,11 +55,6 @@ class Sidebar extends Component {
                 
                 <div className="Sidebar__Message__Container">
                     {/* <h1>Messages View</h1> */}
-                        <MessageMini name="Daniel" photoURL={url} setMainViewState={this.props.setMainViewState} /> 
-                        <MessageMini name="Galen" photoURL={url} setMainViewState={this.props.setMainViewState}/> 
-                        <MessageMini name="Shimin" photoURL={url} setMainViewState={this.props.setMainViewState} /> 
-                        <MessageMini name="Roger" photoURL={url} setMainViewState={this.props.setMainViewState}/> 
-                        <MessageMini name="Noah" photoURL={url}  setMainViewState={this.props.setMainViewState}/> 
 
 
 
@@ -107,7 +62,7 @@ class Sidebar extends Component {
             
             }
 
-            {this.state.sidebarEdit === 'true' ? 
+            {edit === 'true' ? 
             <div className="Zindex">
                 <DevProfile />
 
@@ -120,7 +75,6 @@ class Sidebar extends Component {
 
         );
     }
-}
 
 
 

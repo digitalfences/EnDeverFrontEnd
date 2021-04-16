@@ -9,6 +9,22 @@
   pointer-events: none;
 }
 
+@media screen and (max-width: 500px) {
+  .Sidebar {
+    display:none;
+  }
+  .App-logo {
+    display: none;
+  }
+  .App-header {
+    display: none;
+  }
+  .Navbar {
+    display: none;
+  }
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
