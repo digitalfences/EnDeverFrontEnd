@@ -24,7 +24,7 @@ const App = () => {
   const [auth, setAuth] = useState(false);
   const [display, setDisplay] = useState("messenger");
   const [authURL, setAuthURL] = useState(
-    "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=http://localhost:4000/auth/github/callback"
+    "https://github.com/login/oauth/authorize?client_id=0be8114f0f94de54ce72&&redirect_uri=https://endever.herokuapp.com/auth/github/callback"
   );
   const [history, setHistory] = useState("");
   const [name, setName] = useState("");
@@ -34,7 +34,7 @@ const App = () => {
     async function sessionCheck(){
       axios
       //.get("http://localhost:4000/sessioncheck", {
-         .get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
+         .get("https://endever.herokuapp.com/sessioncheck", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const App = () => {
 
   const setMessengerID = (id) => {
     axios
-      .get(`https://tigerkingbackend.herokuapp.com/message/${id}`, {
+      .get(`https://https://endever.herokuapp.com/message/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
