@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.03f1596b.chunk.css",
+    "main.js": "/static/js/main.764c2b61.chunk.js",
+    "main.js.map": "/static/js/main.764c2b61.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0c554ccc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0c554ccc.js.map",
+    "static/js/2.fcdd5b83.chunk.js": "/static/js/2.fcdd5b83.chunk.js",
+    "static/js/2.fcdd5b83.chunk.js.map": "/static/js/2.fcdd5b83.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.03f1596b.chunk.css.map": "/static/css/main.03f1596b.chunk.css.map",
+    "static/js/2.fcdd5b83.chunk.js.LICENSE.txt": "/static/js/2.fcdd5b83.chunk.js.LICENSE.txt",
+    "static/media/GitHub_Logo_White.6149aa5c.png": "/static/media/GitHub_Logo_White.6149aa5c.png",
+    "static/media/fonts.css": "/static/media/collegia-webfont.a9be603c.woff2",
+    "static/media/endevercircle.c4c6111f.png": "/static/media/endevercircle.c4c6111f.png",
+    "static/media/git-pull-request.07ac0adc.png": "/static/media/git-pull-request.07ac0adc.png",
+    "static/media/imessage.7ac58b26.png": "/static/media/imessage.7ac58b26.png",
+    "static/media/logo.2d27ead7.svg": "/static/media/logo.2d27ead7.svg",
+    "static/media/projecticon.8ff92fc5.png": "/static/media/projecticon.8ff92fc5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c554ccc.js",
+    "static/js/2.fcdd5b83.chunk.js",
+    "static/css/main.03f1596b.chunk.css",
+    "static/js/main.764c2b61.chunk.js"
+  ]
+}
