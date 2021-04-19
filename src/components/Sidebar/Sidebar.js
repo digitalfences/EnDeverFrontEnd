@@ -1,4 +1,4 @@
-import React, { Component ,useState} from 'react';
+import React, { Component ,useReducer,useState} from 'react';
 import {Link, Route} from 'react-router-dom';
 import '../../fonts/fonts.css';
 import './Sidebar.css';
@@ -7,10 +7,11 @@ import MatchMini from '../MatchMini/MatchMini';
 import MessageMini from '../MessageMini/MessageMini';
 import DevProfile from '../DevProfile/DevProfile';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     const [display, setDisplay] = useState('matches')
     const [edit, setEdit] = useState('false');
     let url = 'https://picsum.photos/98/98';
+
     const populateUserMatches = () => {
 
         //foreach match in database
@@ -18,14 +19,11 @@ const Sidebar = () => {
         //start message view on click
 
     }
-
+    if (!props.user) {
+        return <div>Loading...</div>;
+    }
         return (
             <div className="Sidebar">
-                <div className="Sidebar__Profile" onClick={() => setEdit(!edit)}>
-                    <div>O</div>
-                    <div>My Profile</div>
-                </div>
-
                 <div className="Sidebar__Views">
 
                 { display === 'matches' ?
@@ -46,16 +44,31 @@ const Sidebar = () => {
             {display === 'matches' ? 
 
                     <div className="Sidebar__Matches__Container">
-                    <div className="Sidebar__Matches__Container__Mini">
+                    
+                      {props.user.Account.MatchedUsers.length > 0 ? 
+                        <div className="Sidebar__Matches__Container__Mini">
+                          {props.user.Account.MatchedUsers.map((user) => {
+                          return(<MatchMini name={user.UserName} photoURL={user.Account.Picture}key={user._id}></MatchMini>)})}
                       
                         </div>
+                        :
+                        <></>
+                          }
                     </div>
 
             : 
                 
                 <div className="Sidebar__Message__Container">
                     {/* <h1>Messages View</h1> */}
-
+                    {props.user.Account.MatchedUsers.length > 0 ? 
+                        <div className="Sidebar__Matches__Container__Mini">
+                          {props.user.Account.MatchedUsers.map((user) => {
+                          return(<MessageMini name={user.UserName} photoURL={user.Account.Picture}key={user._id}></MessageMini>)})}
+                      
+                        </div>
+                        :
+                        <></>
+                          }
 
 
                 </div>    

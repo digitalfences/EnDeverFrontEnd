@@ -1,0 +1,15 @@
+.NavBarMobile {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+    color: black;
+
+}
+.NavBarMobile img {
+    width: 35px;
+    height: 35px;
+}

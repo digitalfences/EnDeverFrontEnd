@@ -1,7 +1,5 @@
 .App {
-  text-align: center;
   background: #0c0c0c;
-  overflow-x: hidden;
 }
 
 .App-logo {
@@ -9,7 +7,7 @@
   pointer-events: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 765px) {
   .Sidebar {
     display:none;
   }
@@ -21,6 +19,18 @@
   }
   .Navbar {
     display: none;
+  }
+  .NavBarMobile {
+    display: flex;
+  }
+  .App .FlexViews {
+    grid-template-columns: 1fr;
+  }
+  .App .DevCard__Container {
+    width: 100%;
+  height: 100vh;
+  padding-top: 0;
+  padding-left: 0;
   }
 }
 
@@ -94,11 +104,17 @@
 .App-link {
   color: #61dafb;
 }
-
+.DevCard__Container {
+  width: 100%;
+  min-width: 375px;
+  height: 100vh;
+  padding-top: 100px;
+  padding-left: 50px;
+}
 
 .FlexViews {
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
+  grid-template-columns: .3fr .7fr;
   /* border: 1px solid red; */
 }
 @keyframes App-logo-spin {

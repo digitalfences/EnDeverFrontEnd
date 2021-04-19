@@ -1,9 +1,8 @@
 .DevCardButton {
  
     /* background-image: linear-gradient(to top, #cfd9df, #d4dde3, #d8e2e7, #dde6ec, #e2ebf0); */
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    height: 50px;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     border: none;
     border:1px solid #dcdcdc;
     /* opacity: 1 */
@@ -11,24 +10,44 @@
     
 }
 
-.DevCardButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-    background-color:#f6f6f6;
-    transition: 0.5s ease;
-
+.DevCardButton > img {
+    height: 100%;
+    width: 100%;
+    max-height: 7vh;
+    max-width: 7vh;
 }
 
-.DevCardButton > img {
-    max-height: 2em;
+@media screen and (min-width: 766px) {
+    .DevCardButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* background-image: linear-gradient(to top, #cfd9df, #d4dde3, #d8e2e7, #dde6ec, #e2ebf0); */
+        height: 100%;
+        width: 100px;
+        border: none;
+        border:1px solid #dcdcdc;
+        /* opacity: 1 */
+        cursor: pointer;
+        border-radius: 50%;
+        
+    }
+    
+    .DevCardButton > img {
+        height: 85%;
+        width: 85%;
+    }
+
 }
 
 .left {
-    border-radius: 0 0 0 0.5em;
+    background-color: rgb(202, 66, 66);
     /* border-right: 1px solid #1f1f1f; */
 }
 
 .right {
-    
-    border-radius: 0 0 0.5em 0;
+
+    background-color: rgb(102, 167, 102);
     /* border-left: 1px solid #1f1f1f; */
 }

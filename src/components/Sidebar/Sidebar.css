@@ -1,31 +1,14 @@
 .Sidebar {
-    height: 100vh;
-    width: 375px;
+    height: 100%;
+    margin-top: 75px;
+    max-width: 375px;
+    min-width: 325px;
     /* background: red; */
     background: #171616;
     margin: 0;
     padding: 0;
+    z-index: 2;
     
-}
-
-.Sidebar__Profile {
-    height: 75px;
-    background: #383838; /* Old browsers */
-    background: -moz-linear-gradient(top,  #383838 0%, #2d2d2d 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #383838 0%,#2d2d2d 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #383838 0%,#2d2d2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#2d2d2d',GradientType=0 ); /* IE6-9 */
-
-    color: white;
-    font-family: 'GothamRounded-Bold', Arial, Helvetica, sans-serif;
-    user-select: none;
-    text-align: center;
-    font-size: 1.5em;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid black;
 }
 
 .Sidebar__Views {
@@ -49,13 +32,6 @@
     margin-top: 0.1em;
     padding-top: 0.4em;
     padding-bottom: ;
-}
-
-.Sidebar__Matches__Container {
-
-    /* border: 1px solid red; */
-    /* justify-content: s; */
-    /* border-right: 1px solid #ccc; */
 }
 
 .Sidebar__Matches__Container__Mini {

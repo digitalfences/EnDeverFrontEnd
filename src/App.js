@@ -32,8 +32,9 @@ const App = () => {
 
   useEffect(() => {
     async function sessionCheck(){
-      axios.get("http://localhost:4000/sessioncheck", {
-        // .get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
+      axios
+      //.get("http://localhost:4000/sessioncheck", {
+         .get("https://tigerkingbackend.herokuapp.com/sessioncheck", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
@@ -91,37 +92,29 @@ const App = () => {
     return (
       <Router>
         <div className="App">
-          <header>
-            <Navbar></Navbar>
-          </header>
+          <Navbar></Navbar>
           <main className="FlexViews">
             <Switch>
               <Route
                 path="/messages"
                 render={(routerProps) => {
-                  return (
+                  return (<>
                     <Sidebar
                       {...routerProps}
                       {...auth}
-                      {...user}
+                      user={user}
                       messages
             
                     ></Sidebar>
-                  );
-                }}
-              />
-
-              <Route
-                path="/matches"
-                render={(routerProps) => {
-                  return (
-                    <Sidebar
-                      {...routerProps}
-                      {...auth}
-                      {...user}
-                      
-                      matches
-                    ></Sidebar>
+                    <div className="DevCard__Container">
+                        <DevCard
+                          {...routerProps}
+                          auth={auth}
+                          user={user}
+                          matches
+                        ></DevCard>
+                      </div>
+                    </>
                   );
                 }}
               />
@@ -131,7 +124,7 @@ const App = () => {
                 render={(routerProps) => {
                   //this.setMainViewState();
                   //this.setMessengerID();
-                  return (
+                  return (<>
                     <Sidebar
                       {...routerProps}
                       {...auth}
@@ -140,7 +133,18 @@ const App = () => {
                     >
                       {/* {this.setMainViewState()} */}
                     </Sidebar>
-                  );
+                    <div className='Messenger__Container'>
+                      <Messenger></Messenger>
+                    </div>
+                    <div className="DevCard__Container">
+                    <DevCard
+                      {...routerProps}
+                      auth={auth}
+                      user={user}
+                      matches
+                    ></DevCard>
+                  </div>
+                  </>);
                 }}
               />
               <Route
@@ -152,16 +156,17 @@ const App = () => {
                       <Sidebar
                         {...routerProps}
                         {...auth}
-                      {...user}
-                        matches
-                      
-                      ></Sidebar>
-                      <DevCard
-                        {...routerProps}
-                        auth={auth}
                         user={user}
                         matches
-                      ></DevCard>
+                      ></Sidebar>
+                      <div className="DevCard__Container">
+                        <DevCard
+                          {...routerProps}
+                          auth={auth}
+                          user={user}
+                          matches
+                        ></DevCard>
+                      </div>
                     </>
                   );
                 }}
